@@ -39,7 +39,6 @@
       </p>
       <![endif]-->
       
-
 <header>
 <nav class="navbar sticky-top navbar-light bg-light">
   <div class="container">
@@ -47,105 +46,75 @@
   </div>
 </nav>
 </header>
-<main class="auth">
+<main>
   <section class="auth__section">
-    <div class="container">
-      <div class="auth__row row">
-        <div
-          class="auth__col auth__col--content col-sm-12 col-md-12 col-lg-12 col-xl-8"
-        >
-          <div class="auth__content">
-            <div class="auth__content-wrapper">
-              <h2 class="auth__sub-title">Naumai haramai ki te whāre o</h2>
-              <h1 class="auth__title">TURANGA HEALTH</h1>
+    <div class="auth__container">
+      <h1 class="auth__title">Let’s Get Started</h1>
+      <form class="needs-validation" novalidate>
+        <div class="auth__form-field">
+          <label class="form-label">Email</label>
+          <div class="form__input">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="Enter Email here"
+              required
+            />
+            <a role="button" class="clear-input show"></a>
+            <div class="invalid-feedback">Email required</div>
+          </div>
+        </div>
+        <div class="auth__form-field">
+          <label class="form-label">Suburb</label>
+          <select class="form-select form-select-lg" required>
+            <option disabled selected>Select your suburb</option>
+            <option value="">Auckland SBD</option>
+            <option value="">Auckland SBD</option>
+            <option value="">Auckland SBD</option>
+          </select>
+          <div class="auth__form-notes">
+            Suburb so we can show you the nearest pharmacy/hospital/hauora org
+          </div>
+          <div class="invalid-feedback">Please select your suburb</div>
+        </div>
+        <div class="auth__form-field">
+          <label class="form-label">Create Password</label>
+          <div class="form__password">
+            <input
+              type="password"
+              class="form-control form-control-lg"
+              placeholder="At least 8 characters"
+              required
+            />
+            <a role="button" class="toggle-password"></a>
+            <div class="invalid-feedback">
+              Incoret password. Passwords must be at least 8 characters
             </div>
           </div>
         </div>
-        <div
-          class="auth__col auth__col--form col-sm-12 col-md-12 col-lg-12 col-xl-4"
-        >
-          <div class="auth__form">
-            <form class="form">
-              <div class="form__container">
-                <h4 class="form__title">Hi, Please Register</h4>
-                <div class="form__field">
-                  <label class="form__label">Email</label>
-                  <input
-                    type="email"
-                    class="form__input"
-                    placeholder="Eg. johndoe@gmail.com"
-                  />
-                </div>
-                <div class="form__field">
-                  <label class="form__label"
-                    >Password (6 Minimum Character)</label
-                  >
-                  <div
-                    class="form__input-wrapper form__input-wrapper--has-icon"
-                  >
-                    <input
-                      type="password"
-                      class="form__input form__input--password"
-                      placeholder="Password"
-                      maxlength="6"
-                    />
-                    <i class="icon icon-password fas fa-eye"></i>
-                  </div>
-                </div>
-                <div class="form__field">
-                  <label class="form__label">Password Confirmation</label>
-                  <div
-                    class="form__input-wrapper form__input-wrapper--has-icon"
-                  >
-                    <input
-                      type="password"
-                      class="form__input form__input--password"
-                      placeholder="Password"
-                      maxlength="6"
-                    />
-                    <i class="icon icon-password fas fa-eye"></i>
-                  </div>
-                </div>
-                <div class="form__field">
-                  <label
-                    for="checkboxAgreement"
-                    class="form__label form__label--has-checkbox"
-                  >
-                    <input
-                      id="checkboxAgreement"
-                      type="checkbox"
-                      class="form__input form__input--checkbox"
-                    />
-                    <div class="form__custom-checkbox-wrapper">
-                      <div class="form__custom-checkbox"></div>
-                      <p class="form__agreement">
-                        I accept the terms and conditions of Whare Hauora
-                      </p>
-                    </div>
-                    <div class="form__invalid-message invalid-feedback">
-                      invalid message
-                    </div>
-                  </label>
-                </div>
-                <button class="button button--primary">Sign Up</button>
-                <div class="form__helper form__helper--has-link">
-                  <p class="form__text-helper">
-                    Already have an account?
-                    <a href="login.html" class="form__link">Login</a>
-                  </p>
-                </div>
-              </div>
-            </form>
-            <div class="auth__helper">
-              <i class="icon icon--question fas fa-question-circle me-1"></i>
-              <p class="auth__text-helper">
-                Didn't receive confirmation instructions?
-                <a href="#" class="auth__link">Click Here</a>
-              </p>
+        <div class="auth__form-field">
+          <label class="form-label">Confirm Password</label>
+          <div class="form__password">
+            <input
+              type="password"
+              class="form-control form-control-lg"
+              placeholder="At least 8 characters"
+              required
+            />
+            <a role="button" class="toggle-password"></a>
+            <div class="invalid-feedback">
+              Incoret password. Passwords must be at least 8 characters
             </div>
           </div>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary btn-lg col-12 mt-6">
+          Create Account
+        </button>
+        <p class="auth__footer">
+          Already have an Pae Hono Account? 
+          <a href="sign_up.html" class="auth__link">Log In</a>
+        </p>
+      </form>
     </div>
   </section>
 </main>
