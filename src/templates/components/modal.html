@@ -1,0 +1,104 @@
+{% macro uploadPhoto() %}
+<!-- Modal Upload Photo -->
+<div
+  class="modal fade"
+  id="uploadPhotoModal"
+  tabindex="-1"
+  aria-labelledby="uploadPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadPhotoModalLabel">Upload Photo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <select
+          type="text"
+          name="photoName"
+          class="form-control"
+          placeholder="Enter title"
+          required
+        >
+          <option value="sitting room">Sitting room</option>
+          <option value="bathroom">Bathroom</option>
+          <option value="kitchen">Kitchen</option>
+        </select>
+        <input
+          type="file"
+          name="photoFile"
+          id="photoFile"
+          class="visually-hidden"
+          accept="image/*"
+          onchange="imagePreview(this, 'photoPreview', 'btn--select-file');"
+        />
+        <div class="mt-4 text-center">
+          <div class="image-preview__wrapper position-relative">
+            <img id="photoPreview" alt="" class="image-preview" />
+            <label class="action__change" for="photoFile">
+              Change <br />
+              Photo
+            </label>
+          </div>
+          <label
+            id="btnPhotoFile"
+            for="photoFile"
+            class="btn btn--select-file d-md-none me-3 me-md-0"
+          >
+            <i class="fas fa-plus"></i><br />
+            Camera
+          </label>
+          <label id="btnPhotoFile" for="photoFile" class="btn btn--select-file">
+            <i class="fas fa-plus"></i><br />
+            <span class="d-none d-md-inline">Choose File</span>
+            <span class="d-md-none">Galery</span>
+          </label>
+        </div>
+        <div class="mt-4 text-center">
+          <button id="btn-upload" type="button" class="btn btn-primary px-5">
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Modal View Photo -->
+{% macro viewPhoto() %}
+<div
+  class="modal fade"
+  id="viewPhotoModal"
+  tabindex="-1"
+  aria-labelledby="viewPhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewPhotoModalLabel">Windows</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="./assets/img/img-windows.webp" alt="" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

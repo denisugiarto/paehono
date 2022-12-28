@@ -1,0 +1,108 @@
+{% set cssStyle = "style" %}{% set pageTitle = 'Sign Up' %} {% import 'nav.html'
+as nav %} {% extends "layout.html" %} {% block content %}
+
+<header>{{ nav.auth() }}</header>
+<main class="auth">
+  <section class="auth__section">
+    <div class="container">
+      <div class="auth__row row">
+        <div
+          class="auth__col auth__col--content col-sm-12 col-md-12 col-lg-12 col-xl-8"
+        >
+          <div class="auth__content">
+            <div class="auth__content-wrapper">
+              <h2 class="auth__sub-title">Naumai haramai ki te whāre o</h2>
+              <h1 class="auth__title">TURANGA HEALTH</h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="auth__col auth__col--form col-sm-12 col-md-12 col-lg-12 col-xl-4"
+        >
+          <div class="auth__form">
+            <form class="form">
+              <div class="form__container">
+                <h4 class="form__title">Hi, Please Register</h4>
+                <div class="form__field">
+                  <label class="form__label">Email</label>
+                  <input
+                    type="email"
+                    class="form__input"
+                    placeholder="Eg. johndoe@gmail.com"
+                  />
+                </div>
+                <div class="form__field">
+                  <label class="form__label"
+                    >Password (6 Minimum Character)</label
+                  >
+                  <div
+                    class="form__input-wrapper form__input-wrapper--has-icon"
+                  >
+                    <input
+                      type="password"
+                      class="form__input form__input--password"
+                      placeholder="Password"
+                      maxlength="6"
+                    />
+                    <i class="icon icon-password fas fa-eye"></i>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <label class="form__label">Password Confirmation</label>
+                  <div
+                    class="form__input-wrapper form__input-wrapper--has-icon"
+                  >
+                    <input
+                      type="password"
+                      class="form__input form__input--password"
+                      placeholder="Password"
+                      maxlength="6"
+                    />
+                    <i class="icon icon-password fas fa-eye"></i>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <label
+                    for="checkboxAgreement"
+                    class="form__label form__label--has-checkbox"
+                  >
+                    <input
+                      id="checkboxAgreement"
+                      type="checkbox"
+                      class="form__input form__input--checkbox"
+                    />
+                    <div class="form__custom-checkbox-wrapper">
+                      <div class="form__custom-checkbox"></div>
+                      <p class="form__agreement">
+                        I accept the terms and conditions of Whare Hauora
+                      </p>
+                    </div>
+                    <div class="form__invalid-message invalid-feedback">
+                      invalid message
+                    </div>
+                  </label>
+                </div>
+                <button class="button button--primary">Sign Up</button>
+                <div class="form__helper form__helper--has-link">
+                  <p class="form__text-helper">
+                    Already have an account?
+                    <a href="login.html" class="form__link">Login</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+            <div class="auth__helper">
+              <i class="icon icon--question fas fa-question-circle me-1"></i>
+              <p class="auth__text-helper">
+                Didn't receive confirmation instructions?
+                <a href="#" class="auth__link">Click Here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}
