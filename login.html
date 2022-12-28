@@ -53,12 +53,15 @@
       <form class="needs-validation" novalidate>
         <div class="auth__form-field">
           <label class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control form-control-lg"
-            placeholder="Enter Email here"
-            required
-          />
+          <div class="form__input">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="Enter Email here"
+              required
+            />
+            <a role="button" class="clear-input show"></a>
+          </div>
           <div class="invalid-feedback">Your email invalid</div>
         </div>
         <div class="auth__form-field">
@@ -79,9 +82,7 @@
         <div class="d-flex justify-content-between mt-5">
           <div class="col-auto">
             <input class="form-check-input" type="checkbox" id="staySignIn" />
-            <label class="ms-3" for="staySignIn">
-              Stay Sign in
-            </label>
+            <label class="form-label ms-3" for="staySignIn"> Stay Sign in </label>
           </div>
           <div class="col-auto">
             <a href="forgot_password.html" class="auth__link">
