@@ -1,0 +1,185 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Main System</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Select2 Library -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    
+<header>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Pae Hono</a>
+    <!-- Mobile Navbar -->
+    <button
+      class="btn d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div
+      class="offcanvas-lg offcanvas-start w-100 d-lg-none"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">
+          Pae Hono
+        </h5>
+        <a
+          role="button"
+          class="btn"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-label="Close"
+          ><i class="fas fa-times"></i
+        ></a>
+      </div>
+      <div class="offcanvas-body">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Support for Covid and Long Covid
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <ul class="ps-2">
+                  <li class="accordion__link">Hauora organisations</li>
+                  <li class="accordion__link">Request tests</li>
+                  <li class="accordion__link">Home medicine kit</li>
+                  <li class="accordion__link">Monitor your symptoms</li>
+                  <li class="accordion__link">Rongoa practitioners</li>
+                  <li class="accordion__link">Karakia and whakatauki</li>
+                  <li class="accordion__link">Nourishing kai recipes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="" class="navbar__link">About</a>
+
+        <div class="card card--profile mt-6">
+          <div class="card-body">
+            <div class="profile__wrapper">
+              <div class="col-auto">
+                <img
+                  class="profile__avatar"
+                  src="./assets/img/ic-profile.svg"
+                  alt="profile avatar"
+                />
+              </div>
+              <div class="col">
+                <div class="profile__name">Rama</div>
+                <div class="profile__email">masramadotcom@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<main>
+  <section class="auth__section"></section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+      <div class="row">
+        <div class="col-12 col-md-5 col-lg-3">
+          <div class="footer__brands">Pae Hono</div>
+          <div class="d-flex gap-3 mt-4">
+            <a href="" class="footer__social-media">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="footer__social-media">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="footer__heading mt-6 mt-md-0 mb-4">Other</div>
+          <div class="d-flex gap-2 flex-column">
+            <div class="footer__link">wharehauora</div>
+            <div class="footer__link">Tuaiwi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">&copy; 2022 Pae Hono</div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+     
+  </body>
+</html>
