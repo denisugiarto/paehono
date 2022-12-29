@@ -1,0 +1,376 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Medicine Kit</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Select2 Library -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    
+<header>
+<div class="bg-primary">
+  <div class="container d-flex align-items-center justify-content-between py-2 gap-3">
+    <p class="navbar__banner">
+      Designed to create confidence as we navigate life with Covid Ōeunuku
+    </p>
+    <figure class="d-flex align-items-center gap-2 m-0">
+      <img
+        src="./assets/img/img-moonphase.webp"
+        class="navbar__moonphase"
+        alt="moon phase"
+      />
+      <figcaption class="d-none d-md-block text-white">Ōeunuku</figcaption>
+    </figure>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand ms-2" href="/">Pae Hono</a>
+    <!-- Dekstop navbar -->
+    <div class="navbar__dekstop">
+      <div class="dropdown">
+        <button
+          class="btn navbar__item"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Support for Covid and Long Covid<i class="fas fa-chevron-down ms-2">
+          </i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Hauora organisations</a></li>
+          <li><a class="dropdown-item" href="#">Request tests</a></li>
+          <li><a class="dropdown-item" href="#">Home medicine kit</a></li>
+          <li><a class="dropdown-item" href="#">Monitor your symptoms</a></li>
+          <li><a class="dropdown-item" href="#">Rongoa practitioners</a></li>
+          <li><a class="dropdown-item" href="#">Karakia and whakatauki</a></li>
+          <li><a class="dropdown-item" href="#">Nourishing kai recipes</a></li>
+        </ul>
+      </div>
+      <a class="navbar__item" href="">About</a>
+      <img
+        class="navbar__profile"
+        src="./assets/img/ic-profile.svg"
+        alt="profile avatar"
+      />
+    </div>
+    <!-- Mobile Navbar -->
+    <div class="navbar__mobile">
+      <button
+        class="btn btn-sm d-lg-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div
+        class="offcanvas-lg offcanvas-start w-100 d-lg-none"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">
+            Pae Hono
+          </h5>
+          <a
+            role="button"
+            class="btn"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-label="Close"
+          >
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+        <div class="offcanvas-body">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Support for Covid and Long Covid
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <ul class="accordion__menu">
+                    <li>
+                      <a href="" class="accordion__link">
+                        Hauora organisations
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Request tests</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Home medicine kit</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Monitor your symptoms
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Rongoa practitioners
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Karakia and whakatauki
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Nourishing kai recipes
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" class="navbar__link">About</a>
+
+          <div class="card card--profile mt-6">
+            <div class="card-body">
+              <div class="profile__wrapper">
+                <div class="col-auto">
+                  <img
+                    class="profile__avatar"
+                    src="./assets/img/ic-profile.svg"
+                    alt="profile avatar"
+                  />
+                </div>
+                <div class="col">
+                  <div class="profile__name">Rama</div>
+                  <div class="profile__email">masramadotcom@gmail.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<main>
+  <section class="hero__section">
+    <img src="./assets/img/bg-home.webp" class="hero__bg" />
+    <div class="hero__container">
+      <div class="hero__content px-5 py-4 py-md-5 p-lg-6">
+        <div class="hero__content-header hero__content-header--medicine-kit">
+          Create your Covid Medicine kit
+        </div>
+        <hr class="text-primary opacity-100 mx-6" />
+        <div class="hero__content-body hero__content-body--medicine-kit">
+          You can ask your Doctor for a prescription for most of these medicines
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content__section">
+    <div class="container">
+      <div
+        class="row row-cols-1 row-cols-md-2 justify-content-center align-items-center g-3"
+      >
+        <div class="col order-0">
+          <div class="card card-body text-center p-6">CONTENT</div>
+        </div>
+        <div class="col order-1">
+          <div class="card card-body bg-primary text-center p-6 text-white">
+            CONTENT
+          </div>
+        </div>
+        <div class="col order-2 order-md-3">
+          <div class="card card-body text-center p-6">CONTENT</div>
+        </div>
+        <div class="col order-3 order-md-2">
+          <div class="card card-body bg-primary text-center p-6 text-white">
+            CONTENT
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="nearest-pharmacy__section bg-light-blue">
+    <div class="pharmacy__container">
+      <div class="pharmacy__title text-center">Nearest Pharmacy</div>
+       
+
+<div class="pharmacy__item">
+  <div class="col">
+    <div class="pharmacy__name">
+      West Harbour Pharmacy t/a NZ Online Chemist
+    </div>
+    <div class="pharmacy__contact">Auckland, New Zealeand +64 9 41 6 1703</div>
+  </div>
+  <a href="" class="text-center text-primary">
+    <i class="fas fa-globe"></i>
+    <br />
+    Site
+  </a>
+</div>
+
+
+<div class="pharmacy__item">
+  <div class="col">
+    <div class="pharmacy__name">
+      Net Pharmacy
+    </div>
+    <div class="pharmacy__contact">Auckland, New Zealeand +64 9 41 6 1703</div>
+  </div>
+  <a href="" class="text-center text-primary">
+    <i class="fas fa-globe"></i>
+    <br />
+    Site
+  </a>
+</div>
+ 
+
+<div class="pharmacy__item">
+  <div class="col">
+    <div class="pharmacy__name">
+      Chemist warehouse St. Lukes
+    </div>
+    <div class="pharmacy__contact">Auckland, New Zealeand +64 9 41 6 1703</div>
+  </div>
+  <a href="" class="text-center text-primary">
+    <i class="fas fa-globe"></i>
+    <br />
+    Site
+  </a>
+</div>
+
+
+      <!-- pagination -->
+      <nav class="pharmacy__pagination" aria-label="pharmacy pagination">
+        <ul class="pagination mt-5 justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              <i class="fas fa-ellipsis-h"></i>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">10</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+      <div class="row">
+        <div class="col-12 col-md-5 col-lg-3">
+          <div class="footer__brands">Pae Hono</div>
+          <div class="d-flex gap-3 mt-4">
+            <a href="" class="footer__social-media">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="footer__social-media">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="footer__heading mt-6 mt-md-0 mb-4">Other</div>
+          <div class="d-flex gap-2 flex-column">
+            <div class="footer__link">wharehauora</div>
+            <div class="footer__link">Tuaiwi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">&copy; 2022 Pae Hono</div>
+  </footer> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+     
+  </body>
+</html>
