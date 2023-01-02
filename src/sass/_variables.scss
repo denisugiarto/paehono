@@ -32,7 +32,8 @@ $primary: #3f7a98;
 $secondary: #3f988a;
 $danger: #fc742a;
 $light: $gray-100;
-$light-gray: $gray-200;
+$light-blue: #f1faff;
+$gray: $gray-500;
 $success: #3fcc5b;
 $info: #0edaf9;
 $warning: #eae312;
@@ -51,7 +52,8 @@ $theme-colors: (
 
 // Add custom color map
 $custom-colors: (
-  "light-gray": $light-gray,
+  "light-blue": $light-blue,
+  "gray": $gray,
 );
 
 // Merge the maps
@@ -75,7 +77,7 @@ $badge-border-radius: 0.25rem;
 //Border Radius
 $border-radius: 0.25rem;
 $border-radius-sm: 0.125rem;
-$border-radius-lg: 0.25rem;
+$border-radius-lg: 0.625rem;
 
 //Button
 $input-btn-padding-y-lg: 1rem;
@@ -94,6 +96,12 @@ $dropdown-border-width: 0;
 
 //Font Size
 $font-size-lg: 1rem;
+$font-weight-semibold: 500;
+
+//Form validation
+$form-feedback-icon-valid: "";
+$form-feedback-valid-color: $primary;
+$form-feedback-icon-invalid: "";
 
 //Input
 $input-btn-focus-color: $info;
@@ -103,6 +111,7 @@ $input-padding-x-lg: 1rem;
 
 //Link
 $link-color: $gray-900;
+$link-decoration: none;
 
 //Modal
 $modal-header-padding: 1.625rem;
@@ -114,9 +123,16 @@ $nav-link-padding-x: 1.25rem;
 $nav-link-color: $gray-900;
 $nav-tabs-link-active-color: $primary;
 
+$nav-tabs-border-width: 4px;
+
 //Navbar Brands
 $navbar-brand-font-size: 1.25rem;
-$navbar-brand-padding-y: 2rem;
+$navbar-brand-padding-y: 0;
+$navbar-light-brand-color: $primary;
+$navbar-light-brand-hover-color: rgba($primary, 0.8);
+
+// Pagination
+$pagination-color: $primary;
 
 // sizing
 $base-font-size: 16px;

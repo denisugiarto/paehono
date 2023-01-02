@@ -1,0 +1,51 @@
+.hero__content-header--medicine-kit {
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.hero__content-body--medicine-kit {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.medicine-kit__title {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  i {
+    margin-right: 10px;
+    color: $gray;
+    font-size: 24px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.medicine-kit__section {
+  margin-top: -48px;
+}
+
+// .content-with-ads__section {
+//   position: relative;
+//   .ads__section {
+//     position: unset;
+//     margin-top: -48px;
+//     @include media-breakpoint-up(xl) {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//     }
+//   }
+// }

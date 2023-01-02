@@ -1,6 +1,5 @@
 .navbar-brand {
   line-height: calc(100% + 6px);
-  color: $primary;
   font-weight: 500;
   @include media-breakpoint-up(md) {
     font-size: 24px;

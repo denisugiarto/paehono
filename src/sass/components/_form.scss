@@ -1,28 +1,45 @@
 .form {
-  &__password {
+  &__input {
     position: relative;
-    cursor: pointer;
     .form-control {
       padding-right: 50px;
     }
-    .form__password-icon {
+    .clear-input {
       position: absolute;
-      top: 50%;
+      top: 0;
       right: 0;
-      margin-right: 8px;
-      transform: translate(-50%, -50%);
+      padding: 18px 16px 0 0;
+      &.show::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f057";
+      }
+    }
+  }
+  &__password {
+    position: relative;
+    .form-control {
+      padding-right: 50px;
+    }
+    .toggle-password {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 18px 16px 0 0;
       &::before {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f06e";
       }
-    }
-    &.show {
-      .form__password-icon::before {
+      &.show::before {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f070";
       }
     }
   }
+}
+
+.was-validated .form-control:invalid {
+  background-size: 0;
 }

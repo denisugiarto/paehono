@@ -1,0 +1,15 @@
+{% macro default(name, location, phone) %}
+<div class="pharmacy__item">
+  <div class="col">
+    <div class="pharmacy__name">
+      {{name}}
+    </div>
+    <div class="pharmacy__contact">{{location}} {{phone}}</div>
+  </div>
+  <a href="" class="text-center text-primary">
+    <i class="fas fa-globe"></i>
+    <br />
+    Site
+  </a>
+</div>
+{% endmacro %}

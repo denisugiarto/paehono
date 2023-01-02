@@ -1,0 +1,10 @@
+{% macro default(imageUrl, caption) %}
+<div class="col">
+  <div class="medicine-item__card">
+    <figure class="medicine-item__wrapper">
+      <img class="medicine-item__image" src="./assets/img/img-{{imageUrl}}.webp" alt="{{imageUrl}}" />
+      <figcaption class="medicine-item__caption">{{caption}}</figcaption>
+    </figure>
+  </div>
+</div>
+{% endmacro%}

@@ -10,7 +10,11 @@
 // @import "layout/header", "layout/footer", "layout/form", "layout/webapp";
 
 // 4. Components
-@import "components/form", "components/navbar-brand";
+@import "components/accordion", "components/ads", "components/card-profile", "components/footer",
+  "components/form", "components/form-label", "components/form-check-input",
+  "components/hero", "components/hospital", "components/medicine-item", "components/navbar",
+  "components/navbar-brand", "components/nav-tabs", "components/pharmacy", "components/select-2",
+  "components/section", "components/table-lung";
 // , "components/badge", "components/bg-heading",
 //   "components/button", "components/card", "components/carousel",
 //   "components/changes", "components/chart", "components/datepicker",
@@ -24,6 +28,4 @@
 //   "components/toggle-hide-show", "components/tooltip";
 
 // 5. Page-specific styles
-@import "pages/auth";
-// , "pages/installation", "pages/outside-temp", "pages/report",
-//   "pages/webapp/add-whanau";
+@import "pages/auth", "pages/medicine-kit";

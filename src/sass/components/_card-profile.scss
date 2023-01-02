@@ -1,0 +1,28 @@
+.card--profile {
+  background: #f1faff;
+  border-radius: 10px;
+  border-color: transparent;
+
+  .profile {
+    &__wrapper {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    &__avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    &__name {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 500;
+    }
+    &__email {
+        font-size: 14px;
+        line-height: 20px;
+    }
+  }
+}

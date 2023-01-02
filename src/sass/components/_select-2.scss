@@ -1,0 +1,23 @@
+.select2-container {
+  .selection {
+    .select2 {
+      &-selection {
+        height: 100%;
+        padding: 1rem 0 1rem 0.5rem;
+        border-radius: 4px;
+        .select2-selection__arrow {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &:focus {
+          border-color: $info;
+          border-width: 2px;
+        }
+      }
+    }
+  }
+}
+
+.select2-dropdown.select2-dropdown--below {
+    top: 2px;
+}

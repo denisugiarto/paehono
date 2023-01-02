@@ -1,0 +1,35 @@
+.accordion {
+  &-header {
+    .accordion-button {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      padding: 20px 0;
+      @include media-breakpoint-up(md) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+  &-item {
+    border-bottom: 1px dashed $gray-400;
+  }
+  &__menu {
+    list-style: none;
+    padding-left: 10px;
+    
+    li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $gray-600;
+
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}

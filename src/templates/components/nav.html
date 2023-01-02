@@ -5,3 +5,170 @@
   </div>
 </nav>
 {% endmacro %}
+
+<!-- Navbar Pages -->
+{% macro pages() %}
+<div class="bg-primary">
+  <div class="container d-flex align-items-center justify-content-between py-2 gap-3">
+    <p class="navbar__banner">
+      Designed to create confidence as we navigate life with Covid Ōeunuku
+    </p>
+    <figure class="d-flex align-items-center gap-2 m-0">
+      <img
+        src="./assets/img/img-moonphase.webp"
+        class="navbar__moonphase"
+        alt="moon phase"
+      />
+      <figcaption class="d-none d-md-block text-white">Ōeunuku</figcaption>
+    </figure>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand ms-2" href="/">Pae Hono</a>
+    <!-- Dekstop navbar -->
+    <div class="navbar__dekstop">
+      <div class="dropdown">
+        <button
+          class="btn navbar__item"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Support for Covid and Long Covid<i class="fas fa-chevron-down ms-2">
+          </i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Hauora organisations</a></li>
+          <li><a class="dropdown-item" href="#">Request tests</a></li>
+          <li><a class="dropdown-item" href="#">Home medicine kit</a></li>
+          <li><a class="dropdown-item" href="#">Monitor your symptoms</a></li>
+          <li><a class="dropdown-item" href="#">Rongoa practitioners</a></li>
+          <li><a class="dropdown-item" href="#">Karakia and whakatauki</a></li>
+          <li><a class="dropdown-item" href="#">Nourishing kai recipes</a></li>
+        </ul>
+      </div>
+      <a class="navbar__item" href="">About</a>
+      <img
+        class="navbar__profile"
+        src="./assets/img/ic-profile.svg"
+        alt="profile avatar"
+      />
+    </div>
+    <!-- Mobile Navbar -->
+    <div class="navbar__mobile">
+      <button
+        class="btn btn-sm d-lg-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div
+        class="offcanvas-lg offcanvas-start w-100 d-lg-none"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">
+            Pae Hono
+          </h5>
+          <a
+            role="button"
+            class="btn"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-label="Close"
+          >
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+        <div class="offcanvas-body">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Support for Covid and Long Covid
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <ul class="accordion__menu">
+                    <li>
+                      <a href="" class="accordion__link">
+                        Hauora organisations
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Request tests</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Home medicine kit</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Monitor your symptoms
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Rongoa practitioners
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Karakia and whakatauki
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Nourishing kai recipes
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" class="navbar__link">About</a>
+
+          <div class="card card--profile mt-6">
+            <div class="card-body">
+              <div class="profile__wrapper">
+                <div class="col-auto">
+                  <img
+                    class="profile__avatar"
+                    src="./assets/img/ic-profile.svg"
+                    alt="profile avatar"
+                  />
+                </div>
+                <div class="col">
+                  <div class="profile__name">Rama</div>
+                  <div class="profile__email">masramadotcom@gmail.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endmacro %}

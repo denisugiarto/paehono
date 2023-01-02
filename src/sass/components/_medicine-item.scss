@@ -1,0 +1,24 @@
+.medicine-item {
+  &__card {
+    @extend .card, .card-body;
+    background: $gray-200;
+    border-radius: 10px;
+    padding: 20px;
+    border-color: transparent;
+  }
+  &__wrapper {
+    height: 200px;
+    text-align: center;
+  }
+  &__image {
+    object-fit: contain;
+    max-width: 100%;
+    height: calc(100% - 25px);
+  }
+  &__caption {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid $gray-400;
+    text-align: left;
+  }
+}

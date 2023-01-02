@@ -1,0 +1,23 @@
+.nav {
+  &.nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-bottom: 1px solid $gray-500;
+    .nav-link {
+      border-color: #fff;
+
+      &.active {
+        font-weight: 500;
+        line-height: 24px;
+        border-bottom: 4px solid $primary;
+      }
+      &:hover {
+        color: $gray-500;
+      }
+    }
+    .nav-item {
+      flex: 0 0 auto;
+    }
+  }
+}

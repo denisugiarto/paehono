@@ -1,0 +1,44 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Main System' %} {% import
+'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.pages() }}</header>
+<main>
+  <section class="hero__section">
+    <img src="./assets/img/bg-home.webp" class="hero__bg" />
+    <div class="hero__container">
+      <div class="hero__content">
+        <div class="hero__content-header">Kia Ora Masrama!</div>
+        <hr class="text-primary opacity-100" />
+        <div class="hero__content-body">
+          Even though COVID has subsided, continue to protect your family from
+          COVID-19.
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content__section">
+    <div class="container">
+      <div
+        class="row row-cols-1 row-cols-md-2 justify-content-center align-items-center g-3"
+      >
+        <div class="col order-0">
+          <div class="card card-body text-center p-6">CONTENT</div>
+        </div>
+        <div class="col order-1">
+          <div class="card card-body bg-primary text-center p-6 text-white">
+            CONTENT
+          </div>
+        </div>
+        <div class="col order-2 order-md-3">
+          <div class="card card-body text-center p-6">CONTENT</div>
+        </div>
+        <div class="col order-3 order-md-2">
+          <div class="card card-body bg-primary text-center p-6 text-white">
+            CONTENT
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include 'footer.html' %} {% endblock %}
