@@ -31,7 +31,7 @@
             aria-controls="oximeter-tab-pane"
             aria-selected="true"
           >
-            <img src="./assets/img/ic-oximeter.svg" alt="oximeter icon" />
+            <img src="./assets/img/ic-oximeter.svg" class="nav-tab-icon" alt="oximeter icon" />
             Monitoring With Oximeter
           </button>
         </li>
@@ -46,20 +46,77 @@
             aria-controls="symptoms-tab-pane"
             aria-selected="false"
           >
-            <img src="./assets/img/ic-symptoms.svg" alt="oximeter icon" />
+            <img src="./assets/img/ic-symptoms.svg" class="nav-tab-icon" alt="oximeter icon" />
             Monitoring Based On Symptoms
           </button>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div
-          class="tab-pane fade show active py-5"
+          class="tab-pane fade show active pt-5"
           id="oximeter-tab-pane"
           role="tabpanel"
           aria-labelledby="oximeter-tab"
           tabindex="0"
         >
-          <a href="" class="link-primary fs-4 text-decoration-underline fw-semibold" role="link">How to use a oximeter?</a>
+          <section class="oximeter__section">
+            <a
+              href=""
+              class="link-primary fs-4 text-decoration-underline fw-semibold"
+              role="link"
+            >
+              How to use a oximeter?
+            </a>
+
+            <canvas id="oximeter-chart"></canvas>
+          </section>
+          <section class="table-lung__section">
+            <h3 class="table-lung__heading">
+              The following is a guide for adults without pre-existing lung
+              conditions.
+            </h3>
+            <div class="table-responsive">
+              <table class="table mb-0">
+                <caption class="text-dark mt-3">
+                  If your oxygen saturation number drops by 3 (ie, decreases by
+                  3%) or more from your first reading, phone the 24-hour
+                  COVID-19 number 0800 358 5453
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">SP02</th>
+                    <th scope="col">Pulse Rate</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>95-99</td>
+                    <td>50-99</td>
+                    <td>Acceptable</td>
+                  </tr>
+                  <tr>
+                    <td>92-94</td>
+                    <td>100-119</td>
+                    <td>Seek advice from your COVID-19 healthcare team</td>
+                  </tr>
+                  <tr>
+                    <td>Below 92</td>
+                    <td>120 or more</td>
+                    <td>
+                      Call
+                      <a
+                        href="tel:111"
+                        class="link-primary text-decoration-underline fw-bold"
+                        >111</a
+                      >
+                      for urgent medical care
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
         </div>
         <div
           class="tab-pane fade"
@@ -74,55 +131,6 @@
     </div>
   </section>
 
-  <section class="table-lung__section">
-    <div class="container">
-      <h3 class="table-lung__heading">
-        The following is a guide for adults without pre-existing lung
-        conditions.
-      </h3>
-      <div class="table-responsive">
-        <table class="table">
-          <caption class="text-dark mt-3">
-            If your oxygen saturation number drops by 3 (ie, decreases by 3%) or
-            more from your first reading, phone the 24-hour COVID-19 number 0800
-            358 5453
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">SP02</th>
-              <th scope="col">Pulse Rate</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>95-99</td>
-              <td>50-99</td>
-              <td>Acceptable</td>
-            </tr>
-            <tr>
-              <td>92-94</td>
-              <td>100-119</td>
-              <td>Seek advice from your COVID-19 healthcare team</td>
-            </tr>
-            <tr>
-              <td>Below 92</td>
-              <td>120 or more</td>
-              <td>
-                Call
-                <a
-                  href="tel:111"
-                  class="link-primary text-decoration-underline fw-bold"
-                  >111</a
-                >
-                for urgent medical care
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
   <!-- near hospital -->
   <section class="nearest-hospital__section bg-light-blue py-6 mb-0">
     <div class="hospital__container">

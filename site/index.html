@@ -16,11 +16,11 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>{{ pageTitle }}</title>
+    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link href="./assets/css/{{ cssStyle }}.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,11 +53,41 @@
         your experience.
       </p>
       <![endif]-->
-      {% block content %} {% endblock %}
+       
+
+<header>
+<nav class="navbar sticky-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Pae Hono</a>
+  </div>
+</nav>
+</header>
+<main class="auth">
+  <section class="auth__section">
+    <div class="container">
+      <div class="auth__row row">
+        <div class="auth__content">
+          <div class="auth__content-wrapper">
+            <h2 class="auth__sub-title">Content :</h2>
+            <div class="auth__list row row-cols-md-3 g-3">
+              <a href="login.html" class="auth__link">Login</a>
+              <a href="sign_up.html" class="auth__link">Sign Up</a>
+              <a href="home.html" class="auth__link">Main System</a>
+              <a href="medicine-kit.html" class="auth__link">Medicine Kit</a>
+              <a href="monitoring.html" class="auth__link">Monitoring</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
       <!-- ChartJs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/main.js"></script>
-    {% block script %} {% endblock %}
+     
   </body>
 </html>

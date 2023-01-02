@@ -1,0 +1,412 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> 
+<![endif]-->
+<!--[if IE 7]>         
+<html class="no-js lt-ie9 lt-ie8" lang=""> 
+<![endif]-->
+<!--[if IE 8]>         
+<html class="no-js lt-ie9" lang=""> 
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Monitoring</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Select2 Library -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+  
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+      <![endif]-->
+      
+<header>
+<div class="bg-primary">
+  <div class="container d-flex align-items-center justify-content-between py-2 gap-3">
+    <p class="navbar__banner">
+      Designed to create confidence as we navigate life with Covid Ōeunuku
+    </p>
+    <figure class="d-flex align-items-center gap-2 m-0">
+      <img
+        src="./assets/img/img-moonphase.webp"
+        class="navbar__moonphase"
+        alt="moon phase"
+      />
+      <figcaption class="d-none d-md-block text-white">Ōeunuku</figcaption>
+    </figure>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand ms-2" href="/">Pae Hono</a>
+    <!-- Dekstop navbar -->
+    <div class="navbar__dekstop">
+      <div class="dropdown">
+        <button
+          class="btn navbar__item"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Support for Covid and Long Covid<i class="fas fa-chevron-down ms-2">
+          </i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Hauora organisations</a></li>
+          <li><a class="dropdown-item" href="#">Request tests</a></li>
+          <li><a class="dropdown-item" href="#">Home medicine kit</a></li>
+          <li><a class="dropdown-item" href="#">Monitor your symptoms</a></li>
+          <li><a class="dropdown-item" href="#">Rongoa practitioners</a></li>
+          <li><a class="dropdown-item" href="#">Karakia and whakatauki</a></li>
+          <li><a class="dropdown-item" href="#">Nourishing kai recipes</a></li>
+        </ul>
+      </div>
+      <a class="navbar__item" href="">About</a>
+      <img
+        class="navbar__profile"
+        src="./assets/img/ic-profile.svg"
+        alt="profile avatar"
+      />
+    </div>
+    <!-- Mobile Navbar -->
+    <div class="navbar__mobile">
+      <button
+        class="btn btn-sm d-lg-none"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div
+        class="offcanvas-lg offcanvas-start w-100 d-lg-none"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-primary" id="offcanvasNavbarLabel">
+            Pae Hono
+          </h5>
+          <a
+            role="button"
+            class="btn"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-label="Close"
+          >
+            <i class="fas fa-times"></i>
+          </a>
+        </div>
+        <div class="offcanvas-body">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Support for Covid and Long Covid
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <ul class="accordion__menu">
+                    <li>
+                      <a href="" class="accordion__link">
+                        Hauora organisations
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Request tests</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">Home medicine kit</a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Monitor your symptoms
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Rongoa practitioners
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Karakia and whakatauki
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="accordion__link">
+                        Nourishing kai recipes
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="" class="navbar__link">About</a>
+
+          <div class="card card--profile mt-6">
+            <div class="card-body">
+              <div class="profile__wrapper">
+                <div class="col-auto">
+                  <img
+                    class="profile__avatar"
+                    src="./assets/img/ic-profile.svg"
+                    alt="profile avatar"
+                  />
+                </div>
+                <div class="col">
+                  <div class="profile__name">Rama</div>
+                  <div class="profile__email">masramadotcom@gmail.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
+<main>
+  <section class="hero__section">
+    <img src="./assets/img/bg-home.webp" class="hero__bg" />
+    <div class="hero__container">
+      <div class="hero__content px-5 py-4 py-md-5 p-lg-6">
+        <div class="hero__content-header hero__content-header--medicine-kit">
+          Monitoring Whanau Health
+        </div>
+        <hr class="text-primary opacity-100 mx-6" />
+        <div class="hero__content-body hero__content-body--medicine-kit">
+          Do regular monitoring, so you will know what you have to do.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="monitoring__section">
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="oximeter-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#oximeter-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="oximeter-tab-pane"
+            aria-selected="true"
+          >
+            <img src="./assets/img/ic-oximeter.svg" class="nav-tab-icon" alt="oximeter icon" />
+            Monitoring With Oximeter
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="symptoms-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#symptoms-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="symptoms-tab-pane"
+            aria-selected="false"
+          >
+            <img src="./assets/img/ic-symptoms.svg" class="nav-tab-icon" alt="oximeter icon" />
+            Monitoring Based On Symptoms
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active pt-5"
+          id="oximeter-tab-pane"
+          role="tabpanel"
+          aria-labelledby="oximeter-tab"
+          tabindex="0"
+        >
+          <section class="oximeter__section">
+            <a
+              href=""
+              class="link-primary fs-4 text-decoration-underline fw-semibold"
+              role="link"
+            >
+              How to use a oximeter?
+            </a>
+
+            <canvas id="oximeter-chart"></canvas>
+          </section>
+          <section class="table-lung__section">
+            <h3 class="table-lung__heading">
+              The following is a guide for adults without pre-existing lung
+              conditions.
+            </h3>
+            <div class="table-responsive">
+              <table class="table mb-0">
+                <caption class="text-dark mt-3">
+                  If your oxygen saturation number drops by 3 (ie, decreases by
+                  3%) or more from your first reading, phone the 24-hour
+                  COVID-19 number 0800 358 5453
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">SP02</th>
+                    <th scope="col">Pulse Rate</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>95-99</td>
+                    <td>50-99</td>
+                    <td>Acceptable</td>
+                  </tr>
+                  <tr>
+                    <td>92-94</td>
+                    <td>100-119</td>
+                    <td>Seek advice from your COVID-19 healthcare team</td>
+                  </tr>
+                  <tr>
+                    <td>Below 92</td>
+                    <td>120 or more</td>
+                    <td>
+                      Call
+                      <a
+                        href="tel:111"
+                        class="link-primary text-decoration-underline fw-bold"
+                        >111</a
+                      >
+                      for urgent medical care
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="symptoms-tab-pane"
+          role="tabpanel"
+          aria-labelledby="symptoms-tab"
+          tabindex="0"
+        >
+          2
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- near hospital -->
+  <section class="nearest-hospital__section bg-light-blue py-6 mb-0">
+    <div class="hospital__container">
+      <h5 class="hospital__title">The Nearest Hospital</h5>
+      <p class="hospital__subtitle">
+        Information and address number of the hospital closest to your location
+      </p>
+      <div class="hospital__item">
+        <div class="hospital__symptoms">
+          <h3 class="hospital__name">Hospital 1</h3>
+          <p class="hospital__contact text-gray">
+            2972 Westheimer Rd. Santa Ana, Illinois 85486 1
+          </p>
+          <div class="hospital__time-routes">
+            <i class="fas fa-car text-gray me-1"></i>20mnt
+            <i class="fas fa-motorcycle ms-4 text-gray me-1"></i>20mnt
+          </div>
+        </div>
+        <div class="hospital__action">
+          <a id="btn-route" href="" role="button">
+            <i class="fas fa-route hospital__button"></i>
+            <span class="d-block">Route</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+      <div class="row">
+        <div class="col-12 col-md-5 col-lg-3">
+          <div class="footer__brands">Pae Hono</div>
+          <div class="d-flex gap-3 mt-4">
+            <a href="" class="footer__social-media">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="footer__social-media">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md">
+          <div class="footer__heading mt-6 mt-md-0 mb-4">Other</div>
+          <div class="d-flex gap-2 flex-column">
+            <div class="footer__link">wharehauora</div>
+            <div class="footer__link">Tuaiwi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">&copy; 2022 Pae Hono</div>
+  </footer> 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- ChartJs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/main.js"></script>
+     
+  </body>
+</html>
