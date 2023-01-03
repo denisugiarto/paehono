@@ -31,7 +31,11 @@
             aria-controls="oximeter-tab-pane"
             aria-selected="true"
           >
-            <img src="./assets/img/ic-oximeter.svg" class="nav-tab-icon" alt="oximeter icon" />
+            <img
+              src="./assets/img/ic-oximeter.svg"
+              class="nav-tab-icon"
+              alt="oximeter icon"
+            />
             Monitoring With Oximeter
           </button>
         </li>
@@ -46,7 +50,11 @@
             aria-controls="symptoms-tab-pane"
             aria-selected="false"
           >
-            <img src="./assets/img/ic-symptoms.svg" class="nav-tab-icon" alt="oximeter icon" />
+            <img
+              src="./assets/img/ic-symptoms.svg"
+              class="nav-tab-icon"
+              alt="oximeter icon"
+            />
             Monitoring Based On Symptoms
           </button>
         </li>
@@ -67,8 +75,65 @@
             >
               How to use a oximeter?
             </a>
-
-            <canvas id="oximeter-chart"></canvas>
+            <div class="container bg-light-blue">
+              <div class="card">
+                <div class="card-header">
+                  <input class="form-control d-inline w-auto" type="text" name="date-range" id="date-litepicker" />
+                  <button class="btn btn-primary">Take Reading</button>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="Chart__SP02">
+                <h5>Sp02 Chart</h5>
+                <hr />
+                <div class="chart-wrapper">
+                  <canvas id="oximeter-chart" class="bg-white"></canvas>
+                  <div class="legends">
+                    <span class="item">
+                      <span class="color acceptable"></span>
+                      <span class="text">Acceptable</span>
+                    </span>
+                    <span class="item">
+                      <span class="color advice"></span>
+                      <span class="text">Get Advice from healthcare team</span>
+                    </span>
+                    <span class="item">
+                      <span class="color urgent"></span>
+                      <span class="text">Urgent, Call 111</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="Chart__Pulse-Rate">
+                <h5>Sp02 Chart</h5>
+                <hr />
+                <div class="chart-wrapper">
+                  <canvas id="pulse-rate-chart" class="bg-white"></canvas>
+                  <div class="legends">
+                    <span class="item">
+                      <span class="color acceptable"></span>
+                      <span class="text">Acceptable</span>
+                    </span>
+                    <span class="item">
+                      <span class="color advice"></span>
+                      <span class="text">Get Advice from healthcare team</span>
+                    </span>
+                    <span class="item">
+                      <span class="color urgent"></span>
+                      <span class="text">Urgent, Call 111</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <section class="table-lung__section">
             <h3 class="table-lung__heading">

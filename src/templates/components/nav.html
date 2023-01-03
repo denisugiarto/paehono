@@ -9,7 +9,9 @@
 <!-- Navbar Pages -->
 {% macro pages() %}
 <div class="bg-primary">
-  <div class="container d-flex align-items-center justify-content-between py-2 gap-3">
+  <div
+    class="container d-flex align-items-center justify-content-between py-2 gap-3"
+  >
     <p class="navbar__banner">
       Designed to create confidence as we navigate life with Covid Ōeunuku
     </p>
@@ -38,7 +40,7 @@
           Support for Covid and Long Covid<i class="fas fa-chevron-down ms-2">
           </i>
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu ">
           <li><a class="dropdown-item" href="#">Hauora organisations</a></li>
           <li><a class="dropdown-item" href="#">Request tests</a></li>
           <li><a class="dropdown-item" href="#">Home medicine kit</a></li>
@@ -49,11 +51,19 @@
         </ul>
       </div>
       <a class="navbar__item" href="">About</a>
-      <img
-        class="navbar__profile"
-        src="./assets/img/ic-profile.svg"
-        alt="profile avatar"
-      />
+      <div class="dropdown">
+        <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img
+            class="navbar__profile"
+            src="./assets/img/ic-profile.svg"
+            alt="profile avatar"
+          />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="#">Halo Mike</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
     </div>
     <!-- Mobile Navbar -->
     <div class="navbar__mobile">
@@ -148,7 +158,6 @@
             </div>
           </div>
           <a href="" class="navbar__link">About</a>
-
           <div class="card card--profile mt-6">
             <div class="card-body">
               <div class="profile__wrapper">
@@ -166,6 +175,8 @@
               </div>
             </div>
           </div>
+          <a href="/logout.html" class="btn btn-primary mt-3 text-white w-100">Logout</a>
+
         </div>
       </div>
     </div>
