@@ -31,25 +31,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <!-- Select2 Library -->
     <link
       href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- ChartJs -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"
-      integrity="sha512-MC1YbhseV2uYKljGJb7icPOjzF2k6mihfApPyPhEAo3NsLUW0bpgtL4xYWK1B+1OuSrUkfOTfhxrRKCz/Jp3rQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <!-- LitePicker Css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"
+    />
   </head>
 
   <body>
@@ -63,7 +54,9 @@
     
 <header>
 <div class="bg-primary">
-  <div class="container d-flex align-items-center justify-content-between py-2 gap-3">
+  <div
+    class="container d-flex align-items-center justify-content-between py-2 gap-3"
+  >
     <p class="navbar__banner">
       Designed to create confidence as we navigate life with Covid Ōeunuku
     </p>
@@ -92,7 +85,7 @@
           Support for Covid and Long Covid<i class="fas fa-chevron-down ms-2">
           </i>
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu ">
           <li><a class="dropdown-item" href="#">Hauora organisations</a></li>
           <li><a class="dropdown-item" href="#">Request tests</a></li>
           <li><a class="dropdown-item" href="#">Home medicine kit</a></li>
@@ -103,11 +96,19 @@
         </ul>
       </div>
       <a class="navbar__item" href="">About</a>
-      <img
-        class="navbar__profile"
-        src="./assets/img/ic-profile.svg"
-        alt="profile avatar"
-      />
+      <div class="dropdown">
+        <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img
+            class="navbar__profile"
+            src="./assets/img/ic-profile.svg"
+            alt="profile avatar"
+          />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="#">Halo Mike</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
     </div>
     <!-- Mobile Navbar -->
     <div class="navbar__mobile">
@@ -202,7 +203,6 @@
             </div>
           </div>
           <a href="" class="navbar__link">About</a>
-
           <div class="card card--profile mt-6">
             <div class="card-body">
               <div class="profile__wrapper">
@@ -220,6 +220,8 @@
               </div>
             </div>
           </div>
+          <a href="/logout.html" class="btn btn-primary mt-3 text-white w-100">Logout</a>
+
         </div>
       </div>
     </div>
@@ -479,7 +481,18 @@
     </div>
     <div class="footer__copyright">&copy; 2022 Pae Hono</div>
   </footer> 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- LitePicker -->
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
     <script src="./assets/js/main.js"></script>
      
   </body>
