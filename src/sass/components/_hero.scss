@@ -7,9 +7,10 @@
       height: 360px;
     }
     @include media-breakpoint-up(lg) {
-      height: 720px;
+      height: 60vh;
     }
   }
+
   &__container {
     @extend .container;
     @include media-breakpoint-up(md) {
@@ -19,12 +20,18 @@
       max-width: 552px;
     }
   }
+
   &__content {
     @extend .card, .card-body, .shadow;
     border-radius: 10px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+
+    &.hero__content--big {
+      @extend .px-5, .py-4, .py-md-5, .p-lg-6, .px-lg-5;
+    }
+
     &-header {
       font-size: 20px;
       line-height: calc(100% + 4px);
@@ -42,5 +49,9 @@
       line-height: 24px;
       color: $gray-600;
     }
+  }
+
+  &__section + section, &__section + div   {
+    margin-top: -48px;
   }
 }

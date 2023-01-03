@@ -33,6 +33,7 @@ $secondary: #3f988a;
 $danger: #fc742a;
 $light: $gray-100;
 $light-blue: #f1faff;
+$light-gray: $gray-400;
 $gray: $gray-500;
 $success: #3fcc5b;
 $info: #0edaf9;
@@ -53,6 +54,7 @@ $theme-colors: (
 // Add custom color map
 $custom-colors: (
   "light-blue": $light-blue,
+  "light-gray": $light-gray,
   "gray": $gray,
 );
 

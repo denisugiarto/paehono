@@ -34,7 +34,9 @@
 }
 
 .medicine-kit__section {
-  margin-top: -48px;
+  @include media-breakpoint-up(xl) {
+    margin-top: -24px;
+  }
 }
 
 // .content-with-ads__section {

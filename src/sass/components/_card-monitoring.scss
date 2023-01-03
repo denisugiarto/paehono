@@ -1,0 +1,48 @@
+.card {
+  &-monitoring {
+    background-color: $white;
+    border-radius: 8px;
+    padding: 20px 10px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $dark;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 20px;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 0;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  &__content-item {
+    border: 1px solid $dark;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .content-item {
+    &__title {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    &__value {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+}

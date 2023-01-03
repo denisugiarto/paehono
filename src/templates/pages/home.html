@@ -1,6 +1,8 @@
 {% set cssStyle = "style" %} {% set pageTitle = 'Main System' %} {% import
-'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+'nav.html' as nav %} {% import 'alert.html' as alert %} {% extends "layout.html"
+%} {% block content %}
 <header>{{ nav.pages() }}</header>
+{{ alert.flash('danger', 'Error') }}
 <main>
   <section class="hero__section">
     <img src="./assets/img/bg-home.webp" class="hero__bg" />

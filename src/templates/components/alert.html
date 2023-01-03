@@ -1,0 +1,10 @@
+{% macro flash(name, message) %}
+<div
+  class="alert alert-{{name}} alert-dismissible fade show text-center"
+  role="alert"
+>
+  {{message}}
+  <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+  </button>
+</div>
+{% endmacro %}

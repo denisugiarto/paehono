@@ -6,8 +6,10 @@
     border-bottom: 1px solid $gray-500;
     .nav-link {
       border: 0;
-
+      color: $gray-600;
+      
       &.active {
+        color: $primary;
         font-weight: 500;
         line-height: 24px;
         border-bottom: 4px solid $primary;

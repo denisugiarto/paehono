@@ -182,7 +182,16 @@ if (ctxPulseRate != null) {
   });
 }
 
-const picker = new Litepicker({
-  element: document.getElementById("date-litepicker"),
-  singleMode: false,
-});
+//LitePicker Config
+const datePickerElement = document.getElementById("date-litepicker");
+if (datePickerElement != null) {
+  const picker = new Litepicker({
+    element: datePickerElement,
+    singleMode: false,
+    format: "MMM D YYYY",
+  });
+}
+
+//Alert Bootstrap
+const alertList = document.querySelectorAll(".alert");
+const alerts = [...alertList].map((element) => new bootstrap.Alert(element));

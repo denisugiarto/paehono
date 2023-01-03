@@ -232,7 +232,7 @@
   <section class="hero__section">
     <img src="./assets/img/bg-home.webp" class="hero__bg" />
     <div class="hero__container">
-      <div class="hero__content px-5 py-4 py-md-5 p-lg-6">
+      <div class="hero__content hero__content--big">
         <div class="hero__content-header hero__content-header--medicine-kit">
           Monitoring Whanau Health
         </div>
@@ -297,28 +297,100 @@
           <section class="oximeter__section">
             <a
               href=""
-              class="link-primary fs-4 text-decoration-underline fw-semibold"
+              class="link-primary fs-4 text-decoration-underline fw-semibold d-block mb-5"
               role="link"
             >
               How to use a oximeter?
             </a>
-            <div class="container bg-light-blue">
-              <div class="card">
-                <div class="card-header">
-                  <input class="form-control d-inline w-auto" type="text" name="date-range" id="date-litepicker" />
+            <div class="container bg-light-blue py-4 mb-5">
+              <div class="mb-6">
+                <div class="d-flex justify-content-between">                  
+                  <input
+                    class="form-control form-control--date"
+                    type="text"
+                    name="date-range"
+                    id="date-litepicker"
+                    placeholder="Select your date"
+                  />
                   <button class="btn btn-primary">Take Reading</button>
                 </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      
-                    </div>
-                    <div class="col"></div>
-                    <div class="col"></div>
+                <hr class="opacity-100 text-light-gray" />
+                <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
+                  <div class="col">
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Morning</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">99</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">120</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+                  </div>
+                  <div class="col">
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Afternoon</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+                  </div>
+                  <div class="col">
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Night</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
                   </div>
                 </div>
               </div>
-              <div class="Chart__SP02">
+              <div class="Chart__SP02 mb-5">
                 <h5>Sp02 Chart</h5>
                 <hr />
                 <div class="chart-wrapper">
@@ -340,7 +412,7 @@
                 </div>
               </div>
               <div class="Chart__Pulse-Rate">
-                <h5>Sp02 Chart</h5>
+                <h5>Pulse Rate Chart</h5>
                 <hr />
                 <div class="chart-wrapper">
                   <canvas id="pulse-rate-chart" class="bg-white"></canvas>
@@ -477,13 +549,13 @@
     </div>
     <div class="footer__copyright">&copy; 2022 Pae Hono</div>
   </footer> 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
       integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
