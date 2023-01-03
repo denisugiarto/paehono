@@ -303,8 +303,8 @@
               How to use a oximeter?
             </a>
             <div class="container bg-light-blue py-4 mb-5">
-              <div class="mb-5">
-                <div class="d-flex justify-content-between">                  
+              <div class="mb-6">
+                <div class="d-flex justify-content-between">
                   <input
                     class="form-control form-control--date"
                     type="text"
@@ -312,90 +312,81 @@
                     id="date-litepicker"
                     placeholder="Select your date"
                   />
-                  <button class="btn btn-primary">Take Reading</button>
+                  <button class="btn btn-primary" data-bs-target="#oximeterReadingModal" data-bs-toggle="modal">Take Reading</button>
                 </div>
-                <hr class="opacity-100" />
+                <hr class="opacity-100 text-light-gray" />
                 <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
                   <div class="col">
-                    <div class="bg-white px-2 py-4 rounded">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="mb-0">Morning</h5>
-                        <a href="" role="button"><i class="fas fa-pen"></i></a>
-                      </div>
-                      <hr class="opacity-100 my-2 my-md-3" />
-                      <div class="row row-cols-2 g-3">
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>SP02 %</p>
-                            <h4 class="text">99</h4>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>Pulse Rate BPM</p>
-                            <h4 class="text">120</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Morning</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">99</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">120</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
                   </div>
                   <div class="col">
-                    <div class="bg-white px-2 py-4 rounded">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="mb-0">Afternoon</h5>
-                        <a href="" role="button"><i class="fas fa-pen"></i></a>
-                      </div>
-                      <hr class="opacity-100 my-2 my-md-3" />
-                      <div class="row row-cols-2 g-3">
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>SP02 %</p>
-                            <h4 class="text">99</h4>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>Pulse Rate BPM</p>
-                            <h4 class="text">120</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Afternoon</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
                   </div>
                   <div class="col">
-                    <div class="bg-white px-2 py-4 rounded">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="mb-0">Night</h5>
-                        <a href="" role="button"><i class="fas fa-pen"></i></a>
-                      </div>
-                      <hr class="opacity-100 my-2 my-md-3" />
-                      <div class="row row-cols-2 g-3">
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>SP02 %</p>
-                            <h4 class="text">99</h4>
-                          </div>
-                        </div>
-                        <div class="col">
-                          <div
-                            class="content border border-dark rounded-4 py-2 text-center"
-                          >
-                            <p>Pulse Rate BPM</p>
-                            <h4 class="text">120</h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
+<div class="card-monitoring">
+  <div class="card__header">
+    <h5 class="card__title">Night</h5>
+    <a href="" role="button"><i class="fas fa-pen"></i></a>
+  </div>
+  <div class="row row-cols-2 g-3 gx-lg-4">
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">SP02 %</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card__content-item">
+        <p class="content-item__title">Pulse Rate BPM</p>
+        <h4 class="content-item__value">-</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
                   </div>
                 </div>
               </div>
@@ -532,6 +523,42 @@
     </div>
   </section>
 </main>
+
+<!-- Modal Enter Oximeter Readings -->
+<div
+  class="modal fade"
+  id="oximeterReadingModal"
+  tabindex="-1"
+  aria-labelledby="oximeterReadingModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="oximeterReadingModalLabel">Enter Oximeter Readings</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="mt-4 text-center">
+          <a role="button" class="btn btn-primary px-5">
+            cancel
+          </a>
+          <button type="button" class="btn btn-primary px-5">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <footer class="footer">
     <div class="footer__container">
