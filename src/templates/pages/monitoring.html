@@ -1,6 +1,6 @@
 {% set cssStyle = "style" %} {% set pageTitle = 'Monitoring' %} {% import
-'nav.html' as nav %} {% import
-  'cards.html' as card %} {% extends "layout.html" %} {% block content %}
+'nav.html' as nav %} {% import 'cards.html' as card %} {% import 'modal.html' as modal %} {% extends "layout.html"
+%} {% block content %}
 <header>{{ nav.pages() }}</header>
 <main>
   <section class="hero__section">
@@ -78,7 +78,7 @@
             </a>
             <div class="container bg-light-blue py-4 mb-5">
               <div class="mb-6">
-                <div class="d-flex justify-content-between">                  
+                <div class="d-flex justify-content-between">
                   <input
                     class="form-control form-control--date"
                     type="text"
@@ -86,7 +86,7 @@
                     id="date-litepicker"
                     placeholder="Select your date"
                   />
-                  <button class="btn btn-primary">Take Reading</button>
+                  <button class="btn btn-primary" data-bs-target="#oximeterReadingModal" data-bs-toggle="modal">Take Reading</button>
                 </div>
                 <hr class="opacity-100 text-light-gray" />
                 <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
@@ -234,5 +234,6 @@
     </div>
   </section>
 </main>
+{{ modal.oximeterReading() }}
 
 {% include 'footer.html' %} {% endblock %}

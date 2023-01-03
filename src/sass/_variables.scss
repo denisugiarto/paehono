@@ -73,6 +73,9 @@ $accordion-padding-x: 0;
 $accordion-border-width: 0;
 $accordion-button-focus-box-shadow: none;
 
+//Alert
+$alert-border-radius:  0;
+
 //Badge
 $badge-border-radius: 0.25rem;
 
@@ -116,7 +119,7 @@ $link-color: $gray-900;
 $link-decoration: none;
 
 //Modal
-$modal-header-padding: 1.625rem;
+$modal-header-padding: 1rem;
 
 //Nav
 $nav-tabs-border-width: 1px;
