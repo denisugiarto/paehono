@@ -302,23 +302,104 @@
             >
               How to use a oximeter?
             </a>
-            <div class="container bg-light-blue">
-              <div class="card">
-                <div class="card-header">
-                  <input class="form-control d-inline w-auto" type="text" name="date-range" id="date-litepicker" />
+            <div class="container bg-light-blue py-4 mb-5">
+              <div class="mb-5">
+                <div class="d-flex justify-content-between">
+                  <input
+                    class="form-control d-inline w-auto"
+                    type="text"
+                    name="date-range"
+                    id="date-litepicker"
+                    placeholder="Select your date"
+                  />
                   <button class="btn btn-primary">Take Reading</button>
                 </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      
+                <hr class="opacity-100" />
+                <div class="row row-cols-1 row-cols-xl-3 g-3">
+                  <div class="col">
+                    <div class="bg-white px-2 py-4 rounded">
+                      <div class="d-flex justify-content-between">
+                        <h5 class="mb-0">Morning</h5>
+                        <a href="" role="button"><i class="fas fa-pen"></i></a>
+                      </div>
+                      <hr class="opacity-100 my-2 my-md-3" />
+                      <div class="row row-cols-2 g-3">
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>SP02 %</p>
+                            <h4 class="text">99</h4>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>Pulse Rate BPM</p>
+                            <h4 class="text">120</h4>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col"></div>
-                    <div class="col"></div>
+                  </div>
+                  <div class="col">
+                    <div class="bg-white px-2 py-4 rounded">
+                      <div class="d-flex justify-content-between">
+                        <h5 class="mb-0">Afternoon</h5>
+                        <a href="" role="button"><i class="fas fa-pen"></i></a>
+                      </div>
+                      <hr class="opacity-100 my-2 my-md-3" />
+                      <div class="row row-cols-2 g-3">
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>SP02 %</p>
+                            <h4 class="text">99</h4>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>Pulse Rate BPM</p>
+                            <h4 class="text">120</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="bg-white px-2 py-4 rounded">
+                      <div class="d-flex justify-content-between">
+                        <h5 class="mb-0">Night</h5>
+                        <a href="" role="button"><i class="fas fa-pen"></i></a>
+                      </div>
+                      <hr class="opacity-100 my-2 my-md-3" />
+                      <div class="row row-cols-2 g-3">
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>SP02 %</p>
+                            <h4 class="text">99</h4>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div
+                            class="content border border-dark rounded-4 py-2 text-center"
+                          >
+                            <p>Pulse Rate BPM</p>
+                            <h4 class="text">120</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="Chart__SP02">
+              <div class="Chart__SP02 mb-5">
                 <h5>Sp02 Chart</h5>
                 <hr />
                 <div class="chart-wrapper">
@@ -340,7 +421,7 @@
                 </div>
               </div>
               <div class="Chart__Pulse-Rate">
-                <h5>Sp02 Chart</h5>
+                <h5>Pulse Rate Chart</h5>
                 <hr />
                 <div class="chart-wrapper">
                   <canvas id="pulse-rate-chart" class="bg-white"></canvas>

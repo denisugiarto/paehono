@@ -185,4 +185,5 @@ if (ctxPulseRate != null) {
 const picker = new Litepicker({
   element: document.getElementById("date-litepicker"),
   singleMode: false,
+  format: "MMM D YYYY",
 });
