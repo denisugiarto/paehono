@@ -58,3 +58,64 @@
   </div>
 </div>
 {% endmacro %}
+
+{% macro updateOximeterReading() %}
+<!-- Modal Enter Oximeter Readings -->
+<div
+  class="modal fade"
+  id="updateOximeterReadingModal"
+  tabindex="-1"
+  aria-labelledby="updateOximeterReadingModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateOximeterReadingModalLabel">
+          Update Oximeter Readings
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="oxigenSaturation" class="form-label">
+            Oxigen Saturation SP02% <span class="text-danger">*</span>
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="oxigenSaturation"
+            placeholder="Eg. 95"
+            max="100"
+            min="0"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="pulseRate" class="form-label">
+            Pulse Rate (bpm or PRbpm) <span class="text-danger">*</span>
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="pulseRate"
+            placeholder="Eg. 120"
+            min="0"
+            max="250"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a role="button" class="text-primary px-5" data-bs-dismiss="modal">
+          cancel
+        </a>
+        <button type="button" class="btn btn-primary px-5">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
