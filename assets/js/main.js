@@ -76,6 +76,13 @@ if (ctxOximeter != null) {
     type: "line",
     data,
     options: {
+      layout: {
+        padding: {
+          top: 15,
+          left: 10,
+          bottom: 10,
+        },
+      },
       maintainAspectRatio: false,
       scales: {
         x: {
@@ -113,7 +120,7 @@ if (ctxPulseRate != null) {
     datasets: [
       {
         label: "Pulse Rate",
-        data: [125, 105, 110],
+        data: [125, 85, 110],
         borderWidth: 2,
         backgroundColor: "rgb(15, 25, 40)",
         borderColor: "rgb(15, 25, 40)",
@@ -152,6 +159,13 @@ if (ctxPulseRate != null) {
     type: "line",
     data,
     options: {
+      layout: {
+        padding: {
+          top: 15,
+          left: 10,
+          bottom: 10,
+        },
+      },
       maintainAspectRatio: false,
       scales: {
         x: {
