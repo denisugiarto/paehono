@@ -30,78 +30,107 @@ $(document).ready(function () {
 });
 
 const ctxOximeter = document.getElementById("oximeter-chart");
+const oximeterChartArea = [
+  {
+    label: "Acceptable",
+    data: [100, 100, 100, 100, 100], //max area
+    backgroundColor: "rgba(205, 98, 118, 0)",
+    borderColor: "rgba(205, 98, 118, 0)",
+    fill: { above: "rgba(14, 218, 249, .75)", target: { value: 95 } }, // min area
+  },
+  {
+    label: "Get Advice from healthcare team",
+    data: [95, 95, 95, 95, 95],
+    backgroundColor: "rgba(77, 157, 46, 0)",
+    borderColor: "rgba(77, 157, 46, 0)",
+    fill: { above: "rgba(63, 204, 91, .75)", target: { value: 92 } },
+  },
+  {
+    label: "Urgent, Call 111",
+    data: [92, 92, 92, 92, 92],
+    backgroundColor: "rgba(89, 162, 201, 0)",
+    borderColor: "rgba(89, 162, 201, 0)",
+    fill: { above: "rgba(252, 116, 42, .75)", target: { value: 0 } },
+  },
+];
 
-if (ctxOximeter != null) {
-  const data = {
-    labels: ["Morning", "Afternoon", "Night"],
-    datasets: [
-      {
-        label: "Oxigen Rate",
-        data: [85, 93, 98],
-        borderWidth: 2,
-        backgroundColor: "rgb(15, 25, 40)",
-        borderColor: "rgb(15, 25, 40)",
-        fill: false,
-      },
-      {
-        label: "Acceptable",
-        data: [100, 100, 100, 100, 100], //max area
-        backgroundColor: "rgba(205, 98, 118, 0)",
-        borderColor: "rgba(205, 98, 118, 0)",
-        fill: { above: "rgba(14, 218, 249, 1)", target: { value: 95 } }, // min area
-      },
-      {
-        label: "Get Advice from healthcare team",
-        data: [95, 95, 95, 95, 95],
-        backgroundColor: "rgba(77, 157, 46, 0)",
-        borderColor: "rgba(77, 157, 46, 0)",
-        fill: { above: "rgba(63, 204, 91, .75)", target: { value: 92 } },
-      },
-      {
-        label: "Urgent, Call 111",
-        data: [92, 92, 92, 92, 92],
-        backgroundColor: "rgba(89, 162, 201, 0)",
-        borderColor: "rgba(89, 162, 201, 0)",
-        fill: { above: "rgba(252, 116, 42, .75)", target: { value: 0 } },
-      },
-    ],
-  };
+const oxigenRateToday = [
+  {
+    label: "Oxigen Rate",
+    data: [85, 93, 98],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
 
+const labelsOxigenRateToday = ["Morning", "Afternoon", "Night"];
+const labelsOxigenRateMaramataka = [
+  "Ōuenuku",
+  "Ōkoro",
+  "Tamatea-Āio",
+  "Tamatea-ā-ngana",
+  "Tamatea-Kai-ariki",
+  "Tamatea Tūhāhā",
+  "Ariroa",
+];
+
+function createChartDataSpace() {
   data.labels.unshift("");
   data.labels.push("");
   data.datasets[0].data.unshift(null);
   data.datasets[0].data.push(null);
+}
+
+const chartOption = {
+  layout: {
+    padding: {
+      top: 15,
+      left: 10,
+      bottom: 10,
+    },
+  },
+  maintainAspectRatio: false,
+  scales: {
+    x: {
+      offset: false,
+      grid: {
+        color: (ctxOximeter) => {
+          const lastTickIndex = ctxOximeter.chart.scales.x.ticks.length - 1;
+          if (ctxOximeter.index !== 1 && ctxOximeter.index !== lastTickIndex) {
+            return "rgba(102,102,102,0.1)";
+          }
+        },
+      },
+    },
+  },
+  plugins: {
+    legend: {
+      position: "bottom",
+      display: false,
+    },
+    tooltip: {
+      backgroundColor: "rgba(255,255,255, 1)",
+      bodyColor: "#101B37",
+      titleColor: "#101B37",
+    },
+  },
+};
+
+if (ctxOximeter != null) {
+  let datasets = [...oxigenRateToday, ...oximeterChartArea];
+  const data = {
+    labels: labelsOxigenRateToday,
+    datasets,
+  };
+
+  createChartDataSpace();
 
   new Chart(ctxOximeter, {
     type: "line",
     data,
-    options: {
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          offset: false,
-          grid: {
-            color: (ctxOximeter) => {
-              const lastTickIndex = ctxOximeter.chart.scales.x.ticks.length - 1;
-              if (ctxOximeter.index !== 1 && ctxOximeter.index !== 4) {
-                return "rgba(102,102,102,0.1)";
-              }
-            },
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          position: "bottom",
-          display: false,
-        },
-        tooltip: {
-          backgroundColor: "rgba(255,255,255, 1)",
-          bodyColor: "#101B37",
-          titleColor: "#101B37",
-        },
-      },
-    },
+    options: chartOption,
   });
 }
 
@@ -113,7 +142,7 @@ if (ctxPulseRate != null) {
     datasets: [
       {
         label: "Pulse Rate",
-        data: [125, 105, 110],
+        data: [125, 85, 110],
         borderWidth: 2,
         backgroundColor: "rgb(15, 25, 40)",
         borderColor: "rgb(15, 25, 40)",
@@ -124,7 +153,7 @@ if (ctxPulseRate != null) {
         data: [100, 100, 100, 100, 100], //max area
         backgroundColor: "rgba(205, 98, 118, 0)",
         borderColor: "rgba(205, 98, 118, 0)",
-        fill: { above: "rgba(14, 218, 249, 1)", target: { value: 0 } }, // min area
+        fill: { above: "rgba(14, 218, 249, .75)", target: { value: 0 } }, // min area
       },
       {
         label: "Get Advice from healthcare team",
@@ -152,6 +181,13 @@ if (ctxPulseRate != null) {
     type: "line",
     data,
     options: {
+      layout: {
+        padding: {
+          top: 15,
+          left: 10,
+          bottom: 10,
+        },
+      },
       maintainAspectRatio: false,
       scales: {
         x: {
@@ -182,15 +218,15 @@ if (ctxPulseRate != null) {
   });
 }
 
-//LitePicker Config
-const datePickerElement = document.getElementById("date-litepicker");
-if (datePickerElement != null) {
-  const picker = new Litepicker({
-    element: datePickerElement,
-    singleMode: false,
-    format: "MMM D YYYY",
-  });
+function changeChartMaramataka() {
+  alert("change maramataka");
 }
+
+//LitePicker Config
+const datePickerElements = document.querySelectorAll(".date-litepicker");
+const datePicker = [...datePickerElements].map(
+  (element) => new Litepicker({ element: element, format: "MMM D YYYY" })
+);
 
 //Alert Bootstrap
 const alertList = document.querySelectorAll(".alert");

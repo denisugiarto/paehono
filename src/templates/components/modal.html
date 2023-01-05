@@ -1,5 +1,7 @@
-{% macro oximeterReading() %}
+{% import 'input.html' as input %} {% import 'symptom-item.html' as symptom %}
+
 <!-- Modal Enter Oximeter Readings -->
+{% macro oximeterReading() %}
 <div
   class="modal fade"
   id="oximeterReadingModal"
@@ -59,8 +61,8 @@
 </div>
 {% endmacro %}
 
+<!-- Modal Update Oximeter Readings -->
 {% macro updateOximeterReading() %}
-<!-- Modal Enter Oximeter Readings -->
 <div
   class="modal fade"
   id="updateOximeterReadingModal"
@@ -114,6 +116,172 @@
           cancel
         </a>
         <button type="button" class="btn btn-primary px-5">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Modal Add symtomp -->
+{% macro addSymptoms() %}
+<div
+  class="modal fade"
+  id="addSymptomsModal"
+  tabindex="-1"
+  aria-labelledby="addSymptomsModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSymptomsModalLabel">
+          Add Data Based On Symptoms
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="date-litepicker" class="form-label">Select Date</label>
+          {{ input.dateFullWidth('data-date') }}
+        </div>
+        <div class="mb-3">
+          <p for="pulseRate" class="mb-0">What symptoms do you feel?</p>
+          <div class="row row-cols-1 gy-3">
+            <div class="col">
+              {{ symptom.item('Sneezing and runny nose', 'ic-sneezing.svg') }}
+            </div>
+            <div class="col">
+              {{ symptom.item('Sore throat', 'ic-sore-throat.svg') }}
+            </div>
+            <div class="col">
+              {{ symptom.item('Body aches', 'ic-body-aches.svg') }}
+            </div>
+            <div class="col">{{ symptom.item('Fever', 'ic-fever.svg') }}</div>
+            <div class="col">{{ symptom.item('Cough', 'ic-cough.svg') }}</div>
+            <div class="col">
+              {{ symptom.item('Feeling tired', 'ic-body-aches.svg') }}
+            </div>
+            <div class="col">
+              {{ symptom.item('Headache', 'ic-headache.svg') }}
+            </div>
+            <div class="col">
+              {{ symptom.item('Nausea and vomiting', 'ic-cough.svg') }}
+            </div>
+            <div class="col">
+              {{ symptom.item('Diarrhoea', 'ic-diarrhea.svg') }}
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="">What do you feel?</label>
+          <div class="row row-cols-5 g-2 mt-2">
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelCool"
+                autocomplete="off"
+                checked
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark w-100"
+                for="feelCool"
+              >
+                <img src="./assets/img/ic-cool.svg" alt="" />
+                <span class="d-block">Cool</span>
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelGood"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelGood"
+              >
+                <img src="./assets/img/ic-good.svg" alt="" />
+                Good
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelNormal"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelNormal"
+              >
+                <img src="./assets/img/ic-normal.svg" alt="" />
+                Normal
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelBad"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelBad"
+              >
+                <img src="./assets/img/ic-bad.svg" alt="" />
+                Bad
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelVeryBad"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelVeryBad"
+              >
+                <img src="./assets/img/ic-very-bad.svg" alt="" />
+                Very Bad
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <p for="pulseRate" class="mb-0">
+            Did your symptoms suddenly get worse?
+          </p>
+          <div class="mt-1">
+            <input type="radio" class="form-check-input" checked />
+            <label for="" class="form-label">Yes, Very bad</label>
+          </div>
+          <div class="mt-1">
+            <input type="radio" class="form-check-input" checked />
+            <label for="" class="form-label">No, still tolerable</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a role="button" class="text-primary px-5" data-bs-dismiss="modal">
+          cancel
+        </a>
+        <button type="button" class="btn btn-primary px-5">Save</button>
       </div>
     </div>
   </div>

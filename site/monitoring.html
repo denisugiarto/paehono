@@ -240,93 +240,110 @@
     </div>
   </section>
 
-  <section class="monitoring__section">
-    <div class="container">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link active"
-            id="oximeter-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#oximeter-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="oximeter-tab-pane"
-            aria-selected="true"
-          >
-            <img
-              src="./assets/img/ic-oximeter.svg"
-              class="nav-tab-icon"
-              alt="oximeter icon"
-            />
-            Monitoring With Oximeter
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="symptoms-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#symptoms-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="symptoms-tab-pane"
-            aria-selected="false"
-          >
-            <img
-              src="./assets/img/ic-symptoms.svg"
-              class="nav-tab-icon"
-              alt="oximeter icon"
-            />
-            Monitoring Based On Symptoms
-          </button>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div
-          class="tab-pane fade show active pt-5"
-          id="oximeter-tab-pane"
-          role="tabpanel"
-          aria-labelledby="oximeter-tab"
-          tabindex="0"
+  
+<section class="monitoring__section">
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="oximeter-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#oximeter-tab-pane"
+          type="button"
+          role="tab"
+          aria-controls="oximeter-tab-pane"
+          aria-selected="true"
         >
-          <section class="oximeter__section">
-            <a
-              href=""
-              class="link-primary fs-4 text-decoration-underline fw-semibold d-block mb-5"
-              role="link"
-            >
-              How to use a oximeter?
-            </a>
-            <div class="container bg-light-blue py-4 mb-5">
-              <div class="mb-6">
-                <div class="d-flex flex-wrap gap-3">
-                  <input
-                    class="form-control form-control--date"
-                    type="text"
-                    name="date-range"
-                    id="date-litepicker"
-                    placeholder="Select your date"
-                  />
-                  <button class="btn btn-primary col-12 col-md-auto" data-bs-target="#oximeterReadingModal" data-bs-toggle="modal">Take Reading</button>
-                </div>
-                <hr class="opacity-100 text-light-gray" />
-                <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
-                  <div class="col">
-                    
+          <img
+            src="./assets/img/ic-oximeter.svg"
+            class="nav-tab-icon"
+            alt="oximeter icon"
+          />
+          Monitoring With Oximeter
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="symptoms-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#symptoms-tab-pane"
+          type="button"
+          role="tab"
+          aria-controls="symptoms-tab-pane"
+          aria-selected="false"
+        >
+          <img
+            src="./assets/img/ic-symptoms.svg"
+            class="nav-tab-icon"
+            alt="oximeter icon"
+          />
+          Monitoring Based On Symptoms
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- Tab Oximeter -->
+      <div
+        class="tab-pane fade"
+        id="oximeter-tab-pane"
+        role="tabpanel"
+        aria-labelledby="oximeter-tab"
+        tabindex="0"
+      >
+        <section class="oximeter__section">
+          <a
+            href=""
+            class="link-primary fs-4 fw-semibold d-block mb-5"
+            role="link"
+          >
+            How to use a oximeter?
+          </a>
+          <div class="container bg-light-blue py-4 mb-5">
+            <div class="mb-6">
+              <div class="d-flex flex-wrap gap-3">
+                
+<div class="input__date">
+  <input
+    class="form-control date-litepicker"
+    type="text"
+    name="date"
+    id="oximeter-date"
+    placeholder="Select your date"
+  />
+  <label for="oximeter-date">
+    <i class="fas fa-calendar-alt"></i>
+  </label>
+</div>
+
+                <button
+                  class="btn btn-primary col-12 col-md-auto px-4"
+                  data-bs-target="#oximeterReadingModal"
+                  data-bs-toggle="modal"
+                >
+                  Take Reading
+                </button>
+              </div>
+              <hr class="opacity-100 text-light-gray" />
+              <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
+                <div class="col">
+                  
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Morning</h5>
-    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal" ><i class="fas fa-pen"></i></a>
+    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal"
+      ><i class="fas fa-pen"></i
+    ></a>
   </div>
-  <div class="row row-cols-2 g-3 gx-lg-4">
-    <div class="col">
+  <div class="row row-cols-2 g-3 gx-lg-4 justify-content-center">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">SP02 %</p>
         <h4 class="content-item__value">99</h4>
       </div>
     </div>
-    <div class="col">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">Pulse Rate BPM</p>
         <h4 class="content-item__value">120</h4>
@@ -335,22 +352,24 @@
   </div>
 </div>
 
-                  </div>
-                  <div class="col">
-                    
+                </div>
+                <div class="col">
+                  
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Afternoon</h5>
-    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal" ><i class="fas fa-pen"></i></a>
+    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal"
+      ><i class="fas fa-pen"></i
+    ></a>
   </div>
-  <div class="row row-cols-2 g-3 gx-lg-4">
-    <div class="col">
+  <div class="row row-cols-2 g-3 gx-lg-4 justify-content-center">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">SP02 %</p>
         <h4 class="content-item__value">-</h4>
       </div>
     </div>
-    <div class="col">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">Pulse Rate BPM</p>
         <h4 class="content-item__value">-</h4>
@@ -359,22 +378,23 @@
   </div>
 </div>
 
-                  </div>
-                  <div class="col">
-                    
+                </div>
+                <div class="col">
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Night</h5>
-    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal" ><i class="fas fa-pen"></i></a>
+    <a href="#updateOximeterReadingModal" role="button" data-bs-toggle="modal"
+      ><i class="fas fa-pen"></i
+    ></a>
   </div>
-  <div class="row row-cols-2 g-3 gx-lg-4">
-    <div class="col">
+  <div class="row row-cols-2 g-3 gx-lg-4 justify-content-center">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">SP02 %</p>
         <h4 class="content-item__value">-</h4>
       </div>
     </div>
-    <div class="col">
+    <div class="col col-md-3 col-lg">
       <div class="card__content-item">
         <p class="content-item__title">Pulse Rate BPM</p>
         <h4 class="content-item__value">-</h4>
@@ -382,145 +402,265 @@
     </div>
   </div>
 </div>
-
-                  </div>
-                </div>
+</div>
               </div>
-              <div class="Chart__SP02 mb-5">
+            </div>
+            <div class="Chart__SP02 mb-5">
+              <div class="d-flex justify-content-between">
                 <h5>Sp02 Chart</h5>
-                <hr />
-                <div class="chart-wrapper">
-                  <canvas id="oximeter-chart" class="bg-white"></canvas>
-                  <div class="legends">
-                    <span class="item">
-                      <span class="color acceptable"></span>
-                      <span class="text">Acceptable</span>
-                    </span>
-                    <span class="item">
-                      <span class="color advice"></span>
-                      <span class="text">Get Advice from healthcare team</span>
-                    </span>
-                    <span class="item">
-                      <span class="color urgent"></span>
-                      <span class="text">Urgent, Call 111</span>
-                    </span>
-                  </div>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckChecked"
+                    onchange="changeChartMaramataka()"
+                  />
+                  <label class="form-check-label" for="flexSwitchCheckChecked">
+                    Maramataka Calender
+                  </label>
                 </div>
               </div>
-              <div class="Chart__Pulse-Rate">
-                <h5>Pulse Rate Chart</h5>
-                <hr />
-                <div class="chart-wrapper">
-                  <canvas id="pulse-rate-chart" class="bg-white"></canvas>
-                  <div class="legends">
-                    <span class="item">
-                      <span class="color acceptable"></span>
-                      <span class="text">Acceptable</span>
-                    </span>
-                    <span class="item">
-                      <span class="color advice"></span>
-                      <span class="text">Get Advice from healthcare team</span>
-                    </span>
-                    <span class="item">
-                      <span class="color urgent"></span>
-                      <span class="text">Urgent, Call 111</span>
-                    </span>
-                  </div>
+              <hr />
+              <div class="chart-wrapper">
+                <canvas id="oximeter-chart" class="bg-white"></canvas>
+                <div class="legends">
+                  <span class="item">
+                    <span class="color acceptable"></span>
+                    <span class="text">Acceptable</span>
+                  </span>
+                  <span class="item">
+                    <span class="color advice"></span>
+                    <span class="text">Get Advice from healthcare team</span>
+                  </span>
+                  <span class="item">
+                    <span class="color urgent"></span>
+                    <span class="text">Urgent, Call 111</span>
+                  </span>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="table-lung__section">
-            <h3 class="table-lung__heading">
-              The following is a guide for adults without pre-existing lung
-              conditions.
-            </h3>
-            <div class="table-responsive">
-              <table class="table mb-0">
-                <caption class="text-dark mt-3">
-                  If your oxygen saturation number drops by 3 (ie, decreases by
-                  3%) or more from your first reading, phone the 24-hour
-                  COVID-19 number 0800 358 5453
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">SP02</th>
-                    <th scope="col">Pulse Rate</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>95-99</td>
-                    <td>50-99</td>
-                    <td>Acceptable</td>
-                  </tr>
-                  <tr>
-                    <td>92-94</td>
-                    <td>100-119</td>
-                    <td>Seek advice from your COVID-19 healthcare team</td>
-                  </tr>
-                  <tr>
-                    <td>Below 92</td>
-                    <td>120 or more</td>
-                    <td>
-                      Call
-                      <a
-                        href="tel:111"
-                        class="link-primary text-decoration-underline fw-bold"
-                        >111</a
-                      >
-                      for urgent medical care
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="Chart__Pulse-Rate">
+              <h5>Pulse Rate Chart</h5>
+              <hr />
+              <div class="chart-wrapper">
+                <canvas id="pulse-rate-chart" class="bg-white"></canvas>
+                <div class="legends">
+                  <span class="item">
+                    <span class="color urgent"></span>
+                    <span class="text">Urgent, Call 111</span>
+                  </span>
+                  <span class="item">
+                    <span class="color advice"></span>
+                    <span class="text">Get Advice from healthcare team</span>
+                  </span>
+                  <span class="item">
+                    <span class="color acceptable"></span>
+                    <span class="text">Acceptable</span>
+                  </span>
+                </div>
+              </div>
             </div>
-          </section>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="symptoms-tab-pane"
-          role="tabpanel"
-          aria-labelledby="symptoms-tab"
-          tabindex="0"
-        >
-          2
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- near hospital -->
-  <section class="nearest-hospital__section bg-light-blue py-6 mb-0">
-    <div class="hospital__container">
-      <h5 class="hospital__title">The Nearest Hospital</h5>
-      <p class="hospital__subtitle">
-        Information and address number of the hospital closest to your location
-      </p>
-      <div class="hospital__item">
-        <div class="hospital__symptoms">
-          <h3 class="hospital__name">Hospital 1</h3>
-          <p class="hospital__contact text-gray">
-            2972 Westheimer Rd. Santa Ana, Illinois 85486 1
+          </div>
+        </section>
+        <section class="table-lung__section">
+          <h3 class="table-lung__heading">
+            The following is a guide for adults without pre-existing lung
+            conditions.
+          </h3>
+          <div class="table-responsive">
+            <table class="table mb-0 text-center">
+              <thead>
+                <tr>
+                  <th scope="col">SP02</th>
+                  <th scope="col">Pulse Rate</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>95-99</td>
+                  <td>50-99</td>
+                  <td>Acceptable</td>
+                </tr>
+                <tr>
+                  <td>92-94</td>
+                  <td>100-119</td>
+                  <td>Seek advice from your COVID-19 healthcare team</td>
+                </tr>
+                <tr>
+                  <td>Below 92</td>
+                  <td>120 or more</td>
+                  <td>
+                    Call
+                    <a href="tel:111" class="link-primary fw-bold">111</a>
+                    for urgent medical care
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mb-0 mt-3">
+            If your oxygen saturation number drops by 3 (ie, decreases by 3%) or
+            more from your first reading, phone the 24-hour COVID-19 number
+            <a href="tel:08003585453" class="fw-bold link-dark">
+              0800 358 5453
+            </a>
           </p>
-          <div class="hospital__time-routes">
-            <i class="fas fa-car text-gray me-1"></i>20mnt
-            <i class="fas fa-motorcycle ms-4 text-gray me-1"></i>20mnt
+        </section>
+      </div>
+      <!-- Tab Symptoms -->
+      <div
+        class="tab-pane fade show active"
+        id="symptoms-tab-pane"
+        role="tabpanel"
+        aria-labelledby="symptoms-tab"
+        tabindex="0"
+      >
+        <h6>
+          <a href="" class="link-primary fw-semibold"> Click Here </a>
+          to see references on using oximeter
+        </h6>
+        <div class="container bg-light-blue py-4">
+          <div class="mb-6">
+            <div class="d-flex flex-wrap gap-3">
+              
+<div class="input__date">
+  <input
+    class="form-control date-litepicker"
+    type="text"
+    name="date"
+    id="date-symptom"
+    placeholder="Select your date"
+  />
+  <label for="date-symptom">
+    <i class="fas fa-calendar-alt"></i>
+  </label>
+</div>
+
+              <button
+                class="btn btn-primary col-12 col-md-auto px-4"
+                data-bs-target="#addSymptomsModal"
+                data-bs-toggle="modal"
+              >
+                Add Symptoms
+              </button>
+            </div>
+            <hr class="opacity-100 text-light-gray" />
+            <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
+              <div class="col">
+                <div class="card-symtomp">
+                  <div class="card__header">
+                    <h5 class="card__title">Morning</h5>
+                    <a
+                      href="#updateOximeterReadingModal"
+                      role="button"
+                      data-bs-toggle="modal"
+                    >
+                      <i class="fas fa-pen"></i>
+                    </a>
+                  </div>
+                  <div class="card__content">
+                    <p class="content__heading">Actions</p>
+                    <p class="content__text fw-semibold">You are doing well</p>
+                    <p class="content__heading">Acceptable</p>
+                    <div class="content__items">
+                      <p class="text-success">Normal condition, no symptoms</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card-symtomp">
+                  <div class="card__header">
+                    <h5 class="card__title">Afternoon</h5>
+                    <a
+                      href="#updateOximeterReadingModal"
+                      role="button"
+                      data-bs-toggle="modal"
+                    >
+                      <i class="fas fa-pen"></i>
+                    </a>
+                  </div>
+                  <div class="card__content">
+                    <p class="content__heading">Actions</p>
+                    <p class="content__text fw-semibold">
+                      Contact your health provider for further examination
+                    </p>
+                    <p class="content__heading">Symptoms are not bad</p>
+                    <div class="content__items d-flex gap-3">
+                      <div class="btn btn-outline-danger">Bluish Colouring</div>
+                      <div class="btn btn-outline-danger">Tightness</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card-symtomp">
+                  <div class="card__header">
+                    <h5 class="card__title">Night</h5>
+                    <a
+                      href="#updateOximeterReadingModal"
+                      role="button"
+                      data-bs-toggle="modal"
+                    >
+                      <i class="fas fa-pen"></i>
+                    </a>
+                  </div>
+                  <div class="card__content">
+                    <p class="content__heading">Actions</p>
+                    <ul class="content__text fw-semibold">
+                      <li>Call 111 for an ambulance</li>
+                      <li>
+                        Contact your health provider for further examination
+                      </li>
+                    </ul>
+                    <p class="content__heading">Symptoms are bad</p>
+                    <div class="content__items d-flex gap-3">
+                      <div class="btn btn-outline-danger">Bluish Colouring</div>
+                      <div class="btn btn-outline-danger">Tightness</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hospital__action">
-          <a id="btn-route" href="" role="button">
-            <i class="fas fa-route hospital__button"></i>
-            <span class="d-block">Route</span>
-          </a>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+  <!-- near hospital -->
+<section class="nearest-hospital__section bg-light-blue py-6 mb-0">
+  <div class="hospital__container">
+    <h5 class="hospital__title">The Nearest Hospital</h5>
+    <p class="hospital__subtitle">
+      Information and address number of the hospital closest to your location
+    </p>
+    <div class="hospital__item">
+      <div class="hospital__symptoms">
+        <h3 class="hospital__name">Hospital 1</h3>
+        <p class="hospital__contact text-gray">
+          2972 Westheimer Rd. Santa Ana, Illinois 85486 1
+        </p>
+        <div class="hospital__time-routes">
+          <i class="fas fa-car text-gray me-1"></i>20mnt
+          <i class="fas fa-motorcycle ms-4 text-gray me-1"></i>20mnt
+        </div>
+      </div>
+      <div class="hospital__action">
+        <a id="btn-route" href="" role="button">
+          <i class="fas fa-route hospital__button"></i>
+          <span class="d-block">Route</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<!-- Modal Enter Oximeter Readings -->
 <div
   class="modal fade"
   id="oximeterReadingModal"
@@ -578,9 +718,8 @@
     </div>
   </div>
 </div>
+ 
 
-
-<!-- Modal Enter Oximeter Readings -->
 <div
   class="modal fade"
   id="updateOximeterReadingModal"
@@ -638,8 +777,238 @@
     </div>
   </div>
 </div>
+ 
 
+<div
+  class="modal fade"
+  id="addSymptomsModal"
+  tabindex="-1"
+  aria-labelledby="addSymptomsModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSymptomsModalLabel">
+          Add Data Based On Symptoms
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="date-litepicker" class="form-label">Select Date</label>
+          
+<div class="input__date w-100">
+  <input
+    class="form-control date-litepicker"
+    type="text"
+    name="date"
+    id="data-date"
+    placeholder="Select your date"
+  />
+  <label for="data-date">
+    <i class="fas fa-calendar-alt"></i>
+  </label>
+</div>
 
+        </div>
+        <div class="mb-3">
+          <p for="pulseRate" class="mb-0">What symptoms do you feel?</p>
+          <div class="row row-cols-1 gy-3">
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Sneezing and runny nose</label>
+  <img src="./assets/img/ic-sneezing.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Sore throat</label>
+  <img src="./assets/img/ic-sore-throat.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Body aches</label>
+  <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Fever</label>
+  <img src="./assets/img/ic-fever.svg" class="ms-auto" alt="Sneezing" />
+</div>
+</div>
+            <div class="col">
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Cough</label>
+  <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+</div>
+</div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Feeling tired</label>
+  <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Headache</label>
+  <img src="./assets/img/ic-headache.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Nausea and vomiting</label>
+  <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="" type="checkbox" class="form-check-input" />
+  <label for="">Diarrhoea</label>
+  <img src="./assets/img/ic-diarrhea.svg" class="ms-auto" alt="Sneezing" />
+</div>
+
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="">What do you feel?</label>
+          <div class="row row-cols-5 g-2 mt-2">
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelCool"
+                autocomplete="off"
+                checked
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark w-100"
+                for="feelCool"
+              >
+                <img src="./assets/img/ic-cool.svg" alt="" />
+                <span class="d-block">Cool</span>
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelGood"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelGood"
+              >
+                <img src="./assets/img/ic-good.svg" alt="" />
+                Good
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelNormal"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelNormal"
+              >
+                <img src="./assets/img/ic-normal.svg" alt="" />
+                Normal
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelBad"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelBad"
+              >
+                <img src="./assets/img/ic-bad.svg" alt="" />
+                Bad
+              </label>
+            </div>
+            <div class="col">
+              <input
+                type="radio"
+                class="btn-check"
+                name="myFeel"
+                id="feelVeryBad"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-outline-primary border-0 text-dark"
+                for="feelVeryBad"
+              >
+                <img src="./assets/img/ic-very-bad.svg" alt="" />
+                Very Bad
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <p for="pulseRate" class="mb-0">
+            Did your symptoms suddenly get worse?
+          </p>
+          <div class="mt-1">
+            <input type="radio" class="form-check-input" checked />
+            <label for="" class="form-label">Yes, Very bad</label>
+          </div>
+          <div class="mt-1">
+            <input type="radio" class="form-check-input" checked />
+            <label for="" class="form-label">No, still tolerable</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a role="button" class="text-primary px-5" data-bs-dismiss="modal">
+          cancel
+        </a>
+        <button type="button" class="btn btn-primary px-5">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 <footer class="footer">
     <div class="footer__container">
       <div class="row">

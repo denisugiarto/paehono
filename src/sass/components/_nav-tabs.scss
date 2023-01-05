@@ -7,7 +7,10 @@
     .nav-link {
       border: 0;
       color: $gray-600;
-      
+      &:focus-visible {
+        outline: 0;
+      }
+
       &.active {
         color: $primary;
         font-weight: 500;
@@ -30,7 +33,7 @@
   .nav-tab-icon {
     display: none;
     @include media-breakpoint-up(lg) {
-        display: inline;
+      display: inline;
     }
   }
 }

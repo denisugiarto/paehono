@@ -28,21 +28,22 @@
     border: 1px solid $dark;
     border-radius: 8px;
     text-align: center;
-    padding: 10px;
+    padding: 10px;    
+    
+    .content-item {
+      &__title {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      &__value {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
   }
 
-  .content-item {
-    &__title {
-      font-size: 12px;
-      line-height: 18px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-    &__value {
-      font-size: 18px;
-      line-height: 28px;
-      font-weight: 500;
-      margin-bottom: 0;
-    }
-  }
 }

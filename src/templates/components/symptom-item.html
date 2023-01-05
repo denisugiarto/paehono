@@ -1,0 +1,7 @@
+{% macro item(label, iconUrl, id) %}
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="{{id}}" type="checkbox" class="form-check-input" />
+  <label for="{{id}}">{{label}}</label>
+  <img src="./assets/img/{{iconUrl}}" class="ms-auto" alt="Sneezing" />
+</div>
+{% endmacro %}

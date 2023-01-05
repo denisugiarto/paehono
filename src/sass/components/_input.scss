@@ -1,0 +1,21 @@
+.input {
+  &__date {
+    width: 100%;
+    position: relative;
+    @include media-breakpoint-up(md) {
+      width: 250px;
+    }
+    
+    .form-control {
+      padding-right: 25px;
+    }
+
+    label {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $gray-500;
+    }
+  }
+}

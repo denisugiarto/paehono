@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 // 1. Configuration and helpers
-@import "variables";
+@import "variables", "colored-links";
 
 // 2. Vendors
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -11,12 +11,13 @@
 
 // 4. Components
 @import "components/accordion", "components/ads", "components/alert",
-  "components/card-profile", "components/card-monitoring", "components/chart",
+  "components/card-profile", "components/card-monitoring","components/card-symtomp", "components/chart",
   "components/footer", "components/form", "components/form-control",
   "components/form-label", "components/form-check-input", "components/hero",
-  "components/hospital","components/icon", "components/medicine-item", "components/navbar",
-  "components/navbar-brand", "components/nav-tabs", "components/pharmacy",
-  "components/select-2", "components/section", "components/table-lung";
+  "components/hospital", "components/icon", "components/input",
+  "components/medicine-item", "components/navbar", "components/navbar-brand",
+  "components/nav-tabs", "components/pharmacy", "components/select-2",
+  "components/section", "components/table-lung", "components/tab-pane";
 // , "components/badge", "components/bg-heading",
 //   "components/button", "components/card", "components/carousel",
 //   "components/changes", "components/chart", "components/datepicker",

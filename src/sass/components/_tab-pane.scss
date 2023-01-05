@@ -1,0 +1,7 @@
+.tab-pane {
+  padding-top: 32px;
+  
+  &:focus-visible {
+    outline: 0;
+  }
+}
