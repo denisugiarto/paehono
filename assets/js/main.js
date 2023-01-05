@@ -88,11 +88,18 @@ const labelsMaramataka = [
   "Ariroa",
 ];
 
-function createChartDataSpace(data) {
-  const newData = data;
-  newData.labels = ["", ...newData.labels, ""];
-  newData.datasets[0].data = [null, ...newData.datasets[0].data, null];
-  return newData;
+function createSpaceLabels(labels) {
+  const newLabels = [...labels];
+  newLabels.push("");
+  newLabels.unshift("");
+  return newLabels;
+}
+
+function createSpaceDatas(datas) {
+  const newDatas = [Object.assign({}, ...datas)];
+  console.log("newDatas", newDatas);
+  newDatas[0].data = [null, ...newDatas[0].data, null];
+  return newDatas;
 }
 
 const chartOptions = {
@@ -140,38 +147,51 @@ function updateChartArea(chartArea, length) {
     return (data.data = newArr);
   });
 }
-
+console.log("src", oxigenRateToday);
 const createChart = (id, labels, datas, chartArea) => {
   const SPACE_LENGTH = 2;
   const DATAS_LENGTH = datas[0].data.length;
   let chartAreaLength = SPACE_LENGTH + DATAS_LENGTH;
 
   updateChartArea(chartArea, chartAreaLength);
+  const datasWithSpace = createSpaceDatas(datas);
+  const labelsWithSpace = createSpaceLabels(labels);
+  console.log(datasWithSpace);
 
-  let datasets = [...datas, ...chartArea];
+  let datasets = [...datasWithSpace, ...chartArea];
 
   const data = {
-    labels,
+    labels: labelsWithSpace,
     datasets,
   };
-
   const chartConfig = {
     type: "line",
     data,
     options: chartOptions,
   };
 
-  createChartDataSpace(data);
-
   return new Chart(id, chartConfig);
 };
 
 let oxiChart;
 if (ctxOximeter != null) {
+  createOximeterChartToday();
+}
+
+function createOximeterChartToday() {
   oxiChart = createChart(
     ctxOximeter,
     labelsToday,
     oxigenRateToday,
+    oximeterChartArea
+  );
+}
+
+function createOximeterChartMaramataka() {
+  oxiChart = createChart(
+    ctxOximeter,
+    labelsMaramataka,
+    oxigenRateWeek,
     oximeterChartArea
   );
 }
@@ -226,6 +246,10 @@ const pulseRateChartArea = [
 
 let pulseRateChart;
 if (ctxPulseRate != null) {
+  createPulseRateChartToday();
+}
+
+function createPulseRateChartToday() {
   pulseRateChart = createChart(
     ctxPulseRate,
     labelsToday,
@@ -234,15 +258,7 @@ if (ctxPulseRate != null) {
   );
 }
 
-function changeChartMaramataka() {
-  oxiChart.destroy();
-  oxiChart = createChart(
-    ctxOximeter,
-    labelsMaramataka,
-    oxigenRateWeek,
-    oximeterChartArea
-  );
-  pulseRateChart.destroy();
+function createPulseRateChartMaramataka() {
   pulseRateChart = createChart(
     ctxPulseRate,
     labelsMaramataka,
@@ -251,9 +267,32 @@ function changeChartMaramataka() {
   );
 }
 
+function changeChartMaramataka(checked) {
+  oxiChart.destroy();
+  pulseRateChart.destroy();
+
+  if (!checked) {
+    createOximeterChartToday();
+    createPulseRateChartToday();
+    return;
+  }
+
+  createOximeterChartMaramataka();
+  createPulseRateChartMaramataka();
+}
+
 //LitePicker Config
-const datePickerElements = document.querySelectorAll(".date-litepicker");
-const datePicker = [...datePickerElements].map(
+const datePickerRanges = document.querySelectorAll(".date-litepicker-range");
+const datePickerSingle = document.querySelectorAll(".date-litepicker");
+const datePickerRange = [...datePickerRanges].map(
+  (element) =>
+    new Litepicker({
+      element: element,
+      format: "MMM D YYYY",
+      singleMode: false,
+    })
+);
+const datePicker = [...datePickerSingle].map(
   (element) => new Litepicker({ element: element, format: "MMM D YYYY" })
 );
 
