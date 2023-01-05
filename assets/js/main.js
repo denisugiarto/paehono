@@ -189,6 +189,17 @@ const pulseRateToday = [
   },
 ];
 
+const pulseRateWeek = [
+  {
+    label: "Pulse Rate",
+    data: [125, 85, 110, 105, 110, 120, 120],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
+
 const pulseRateChartArea = [
   {
     label: "Urgent, Call 111",
@@ -230,6 +241,13 @@ function changeChartMaramataka() {
     labelsMaramataka,
     oxigenRateWeek,
     oximeterChartArea
+  );
+  pulseRateChart.destroy();
+  pulseRateChart = createChart(
+    ctxPulseRate,
+    labelsMaramataka,
+    pulseRateWeek,
+    pulseRateChartArea
   );
 }
 
