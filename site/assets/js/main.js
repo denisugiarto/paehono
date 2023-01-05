@@ -29,25 +29,26 @@ $(document).ready(function () {
   });
 });
 
+// CHART CONFIG
 const ctxOximeter = document.getElementById("oximeter-chart");
 const oximeterChartArea = [
   {
     label: "Acceptable",
-    data: [100, 100, 100, 100, 100], //max area
+    data: [100], //max area
     backgroundColor: "rgba(205, 98, 118, 0)",
     borderColor: "rgba(205, 98, 118, 0)",
     fill: { above: "rgba(14, 218, 249, .75)", target: { value: 95 } }, // min area
   },
   {
     label: "Get Advice from healthcare team",
-    data: [95, 95, 95, 95, 95],
+    data: [95],
     backgroundColor: "rgba(77, 157, 46, 0)",
     borderColor: "rgba(77, 157, 46, 0)",
     fill: { above: "rgba(63, 204, 91, .75)", target: { value: 92 } },
   },
   {
     label: "Urgent, Call 111",
-    data: [92, 92, 92, 92, 92],
+    data: [92],
     backgroundColor: "rgba(89, 162, 201, 0)",
     borderColor: "rgba(89, 162, 201, 0)",
     fill: { above: "rgba(252, 116, 42, .75)", target: { value: 0 } },
@@ -65,8 +66,19 @@ const oxigenRateToday = [
   },
 ];
 
-const labelsOxigenRateToday = ["Morning", "Afternoon", "Night"];
-const labelsOxigenRateMaramataka = [
+const oxigenRateWeek = [
+  {
+    label: "Oxigen Rate",
+    data: [85, 93, 98, 90, 91, 90, 95],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
+
+const labelsToday = ["Morning", "Afternoon", "Night"];
+const labelsMaramataka = [
   "Ōuenuku",
   "Ōkoro",
   "Tamatea-Āio",
@@ -76,14 +88,21 @@ const labelsOxigenRateMaramataka = [
   "Ariroa",
 ];
 
-function createChartDataSpace() {
-  data.labels.unshift("");
-  data.labels.push("");
-  data.datasets[0].data.unshift(null);
-  data.datasets[0].data.push(null);
+function createSpaceLabels(labels) {
+  const newLabels = [...labels];
+  newLabels.push("");
+  newLabels.unshift("");
+  return newLabels;
 }
 
-const chartOption = {
+function createSpaceDatas(datas) {
+  const newDatas = [Object.assign({}, ...datas)];
+  console.log("newDatas", newDatas);
+  newDatas[0].data = [null, ...newDatas[0].data, null];
+  return newDatas;
+}
+
+const chartOptions = {
   layout: {
     padding: {
       top: 15,
@@ -118,113 +137,162 @@ const chartOption = {
   },
 };
 
-if (ctxOximeter != null) {
-  let datasets = [...oxigenRateToday, ...oximeterChartArea];
+function updateChartArea(chartArea, length) {
+  chartArea.map((data) => {
+    const value = data.data[0];
+    let newArr = [];
+    for (let i = 0; i < length; i++) {
+      newArr.push(value);
+    }
+    return (data.data = newArr);
+  });
+}
+console.log("src", oxigenRateToday);
+const createChart = (id, labels, datas, chartArea) => {
+  const SPACE_LENGTH = 2;
+  const DATAS_LENGTH = datas[0].data.length;
+  let chartAreaLength = SPACE_LENGTH + DATAS_LENGTH;
+
+  updateChartArea(chartArea, chartAreaLength);
+  const datasWithSpace = createSpaceDatas(datas);
+  const labelsWithSpace = createSpaceLabels(labels);
+  console.log(datasWithSpace);
+
+  let datasets = [...datasWithSpace, ...chartArea];
+
   const data = {
-    labels: labelsOxigenRateToday,
+    labels: labelsWithSpace,
     datasets,
   };
-
-  createChartDataSpace();
-
-  new Chart(ctxOximeter, {
+  const chartConfig = {
     type: "line",
     data,
-    options: chartOption,
-  });
+    options: chartOptions,
+  };
+
+  return new Chart(id, chartConfig);
+};
+
+let oxiChart;
+if (ctxOximeter != null) {
+  createOximeterChartToday();
+}
+
+function createOximeterChartToday() {
+  oxiChart = createChart(
+    ctxOximeter,
+    labelsToday,
+    oxigenRateToday,
+    oximeterChartArea
+  );
+}
+
+function createOximeterChartMaramataka() {
+  oxiChart = createChart(
+    ctxOximeter,
+    labelsMaramataka,
+    oxigenRateWeek,
+    oximeterChartArea
+  );
 }
 
 const ctxPulseRate = document.getElementById("pulse-rate-chart");
 
+const pulseRateToday = [
+  {
+    label: "Pulse Rate",
+    data: [125, 85, 110],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
+
+const pulseRateWeek = [
+  {
+    label: "Pulse Rate",
+    data: [125, 85, 110, 105, 110, 120, 120],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
+
+const pulseRateChartArea = [
+  {
+    label: "Urgent, Call 111",
+    data: [150],
+    backgroundColor: "rgba(89, 162, 201, 0)",
+    borderColor: "rgba(89, 162, 201, 0)",
+    fill: { above: "rgba(252, 116, 42, .75)", target: { value: 120 } },
+  },
+  {
+    label: "Get Advice from healthcare team",
+    data: [120],
+    backgroundColor: "rgba(77, 157, 46, 0)",
+    borderColor: "rgba(77, 157, 46, 0)",
+    fill: { above: "rgba(63, 204, 91, .75)", target: { value: 100 } },
+  },
+  {
+    label: "Acceptable",
+    data: [100], //max area
+    backgroundColor: "rgba(205, 98, 118, 0)",
+    borderColor: "rgba(205, 98, 118, 0)",
+    fill: { above: "rgba(14, 218, 249, .75)", target: { value: 0 } }, // min area
+  },
+];
+
+let pulseRateChart;
 if (ctxPulseRate != null) {
-  const data = {
-    labels: ["Morning", "Afternoon", "Night"],
-    datasets: [
-      {
-        label: "Pulse Rate",
-        data: [125, 85, 110],
-        borderWidth: 2,
-        backgroundColor: "rgb(15, 25, 40)",
-        borderColor: "rgb(15, 25, 40)",
-        fill: false,
-      },
-      {
-        label: "Acceptable",
-        data: [100, 100, 100, 100, 100], //max area
-        backgroundColor: "rgba(205, 98, 118, 0)",
-        borderColor: "rgba(205, 98, 118, 0)",
-        fill: { above: "rgba(14, 218, 249, .75)", target: { value: 0 } }, // min area
-      },
-      {
-        label: "Get Advice from healthcare team",
-        data: [120, 120, 120, 120, 120],
-        backgroundColor: "rgba(77, 157, 46, 0)",
-        borderColor: "rgba(77, 157, 46, 0)",
-        fill: { above: "rgba(63, 204, 91, .75)", target: { value: 100 } },
-      },
-      {
-        label: "Urgent, Call 111",
-        data: [150, 150, 150, 150, 150],
-        backgroundColor: "rgba(89, 162, 201, 0)",
-        borderColor: "rgba(89, 162, 201, 0)",
-        fill: { above: "rgba(252, 116, 42, .75)", target: { value: 120 } },
-      },
-    ],
-  };
-
-  data.labels.unshift("");
-  data.labels.push("");
-  data.datasets[0].data.unshift(null);
-  data.datasets[0].data.push(null);
-
-  new Chart(ctxPulseRate, {
-    type: "line",
-    data,
-    options: {
-      layout: {
-        padding: {
-          top: 15,
-          left: 10,
-          bottom: 10,
-        },
-      },
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          offset: false,
-          grid: {
-            color: (ctxPulseRate) => {
-              const lastTickIndex =
-                ctxPulseRate.chart.scales.x.ticks.length - 1;
-              if (ctxPulseRate.index !== 1 && ctxPulseRate.index !== 4) {
-                return "rgba(102,102,102,0.1)";
-              }
-            },
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          position: "bottom",
-          display: false,
-        },
-        tooltip: {
-          backgroundColor: "rgba(255,255,255, 1)",
-          bodyColor: "#101B37",
-          titleColor: "#101B37",
-        },
-      },
-    },
-  });
+  createPulseRateChartToday();
 }
 
-function changeChartMaramataka() {
-  alert("change maramataka");
+function createPulseRateChartToday() {
+  pulseRateChart = createChart(
+    ctxPulseRate,
+    labelsToday,
+    pulseRateToday,
+    pulseRateChartArea
+  );
+}
+
+function createPulseRateChartMaramataka() {
+  pulseRateChart = createChart(
+    ctxPulseRate,
+    labelsMaramataka,
+    pulseRateWeek,
+    pulseRateChartArea
+  );
+}
+
+function changeChartMaramataka(checked) {
+  oxiChart.destroy();
+  pulseRateChart.destroy();
+
+  if (!checked) {
+    createOximeterChartToday();
+    createPulseRateChartToday();
+    return;
+  }
+
+  createOximeterChartMaramataka();
+  createPulseRateChartMaramataka();
 }
 
 //LitePicker Config
-const datePickerElements = document.querySelectorAll(".date-litepicker");
-const datePicker = [...datePickerElements].map(
+const datePickerRanges = document.querySelectorAll(".date-litepicker-range");
+const datePickerSingle = document.querySelectorAll(".date-litepicker");
+const datePickerRange = [...datePickerRanges].map(
+  (element) =>
+    new Litepicker({
+      element: element,
+      format: "MMM D YYYY",
+      singleMode: false,
+    })
+);
+const datePicker = [...datePickerSingle].map(
   (element) => new Litepicker({ element: element, format: "MMM D YYYY" })
 );
 

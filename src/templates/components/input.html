@@ -13,6 +13,21 @@
 </div>
 {% endmacro %}
 
+{% macro dateRange(id) %}
+<div class="input__date">
+  <input
+    class="form-control date-litepicker-range"
+    type="text"
+    name="date"
+    id="{{id}}"
+    placeholder="Select your date"
+  />
+  <label for="{{id}}">
+    <i class="fas fa-calendar-alt"></i>
+  </label>
+</div>
+{% endmacro %}
+
 {% macro dateFullWidth(id) %}
 <div class="input__date w-100">
   <input
