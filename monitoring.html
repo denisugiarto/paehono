@@ -300,35 +300,20 @@
           >
             How to use a oximeter?
           </a>
-          <div class="container bg-light-blue py-4 mb-5">
-            <div class="mb-6">
-              <div class="d-flex flex-wrap gap-3">
+          <div class="card__primary">
+            <div class="text-end">
+              <button
+                class="btn btn-primary col-12 col-md-auto px-4"
+                data-bs-target="#oximeterReadingModal"
+                data-bs-toggle="modal"
+              >
+                Take Reading
+              </button>
+            </div>
+            <hr class="opacity-100 text-light-gray" />
+            <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
+              <div class="col">
                 
-<div class="input__date">
-  <input
-    class="form-control date-litepicker"
-    type="text"
-    name="date"
-    id="oximeter-date"
-    placeholder="Select your date"
-  />
-  <label for="oximeter-date">
-    <i class="fas fa-calendar-alt"></i>
-  </label>
-</div>
-
-                <button
-                  class="btn btn-primary col-12 col-md-auto px-4"
-                  data-bs-target="#oximeterReadingModal"
-                  data-bs-toggle="modal"
-                >
-                  Take Reading
-                </button>
-              </div>
-              <hr class="opacity-100 text-light-gray" />
-              <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
-                <div class="col">
-                  
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Morning</h5>
@@ -352,9 +337,9 @@
   </div>
 </div>
 
-                </div>
-                <div class="col">
-                  
+              </div>
+              <div class="col">
+                
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Afternoon</h5>
@@ -378,8 +363,8 @@
   </div>
 </div>
 
-                </div>
-                <div class="col">
+              </div>
+              <div class="col">
 <div class="card-monitoring">
   <div class="card__header">
     <h5 class="card__title">Night</h5>
@@ -403,24 +388,41 @@
   </div>
 </div>
 </div>
+            </div>
+          </div>
+          <div class="card__primary">
+            <div
+              class="chart__header"
+            >
+              
+<div class="input__date">
+  <input
+    class="form-control date-litepicker-range"
+    type="text"
+    name="date"
+    id="oximeter-date"
+    placeholder="Select your date"
+  />
+  <label for="oximeter-date">
+    <i class="fas fa-calendar-alt"></i>
+  </label>
+</div>
+
+              <div class="form-switch__wrapper">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                  onchange="changeChartMaramataka(checked)"
+                />
+                <label class="form-check-label" for="flexSwitchCheckChecked">
+                  Maramataka Calender
+                </label>
               </div>
             </div>
             <div class="Chart__SP02 mb-5">
-              <div class="d-flex justify-content-between">
-                <h5>Sp02 Chart</h5>
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckChecked"
-                    onchange="changeChartMaramataka(checked)"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckChecked">
-                    Maramataka Calender
-                  </label>
-                </div>
-              </div>
+              <h5 class="chart__title">Sp02 Chart</h5>
               <hr />
               <div class="chart-wrapper">
                 <canvas id="oximeter-chart" class="bg-white"></canvas>
@@ -441,7 +443,7 @@
               </div>
             </div>
             <div class="Chart__Pulse-Rate">
-              <h5>Pulse Rate Chart</h5>
+              <h5 class="chart__title">Pulse Rate Chart</h5>
               <hr />
               <div class="chart-wrapper">
                 <canvas id="pulse-rate-chart" class="bg-white"></canvas>
@@ -800,7 +802,7 @@
         ></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
+        <div class="input__wrapper">
           <label for="date-litepicker" class="form-label">Select Date</label>
           
 <div class="input__date w-100">
@@ -817,89 +819,107 @@
 </div>
 
         </div>
-        <div class="mb-3">
+        <div class="input__wrapper">
           <p for="pulseRate" class="mb-0">What symptoms do you feel?</p>
           <div class="row row-cols-1 gy-3">
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Sneezing and runny nose</label>
-  <img src="./assets/img/ic-sneezing.svg" class="ms-auto" alt="Sneezing" />
+  <input id="sneezing" type="checkbox" class="form-check-input" />
+  <label for="sneezing" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Sneezing and runny nose
+    <img src="./assets/img/ic-sneezing.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 
             </div>
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Sore throat</label>
-  <img src="./assets/img/ic-sore-throat.svg" class="ms-auto" alt="Sneezing" />
+  <input id="sore" type="checkbox" class="form-check-input" />
+  <label for="sore" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Sore throat
+    <img src="./assets/img/ic-sore-throat.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 
             </div>
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Body aches</label>
-  <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
+  <input id="aches" type="checkbox" class="form-check-input" />
+  <label for="aches" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Body aches
+    <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 
             </div>
             <div class="col">
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Fever</label>
-  <img src="./assets/img/ic-fever.svg" class="ms-auto" alt="Sneezing" />
+  <input id="fever" type="checkbox" class="form-check-input" />
+  <label for="fever" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Fever
+    <img src="./assets/img/ic-fever.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 </div>
             <div class="col">
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Cough</label>
-  <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+  <input id="cough" type="checkbox" class="form-check-input" />
+  <label for="cough" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Cough
+    <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 </div>
-            <div class="col">
-              
-<div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Feeling tired</label>
-  <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
-</div>
-
-            </div>
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Headache</label>
-  <img src="./assets/img/ic-headache.svg" class="ms-auto" alt="Sneezing" />
-</div>
-
-            </div>
-            <div class="col">
-              
-<div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Nausea and vomiting</label>
-  <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+  <input id="tired" type="checkbox" class="form-check-input" />
+  <label for="tired" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Feeling tired
+    <img src="./assets/img/ic-body-aches.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 
             </div>
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
-  <input id="" type="checkbox" class="form-check-input" />
-  <label for="">Diarrhoea</label>
-  <img src="./assets/img/ic-diarrhea.svg" class="ms-auto" alt="Sneezing" />
+  <input id="headache" type="checkbox" class="form-check-input" />
+  <label for="headache" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Headache
+    <img src="./assets/img/ic-headache.svg" class="ms-auto" alt="Sneezing" />
+  </label>
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="nausea" type="checkbox" class="form-check-input" />
+  <label for="nausea" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Nausea and vomiting
+    <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
+  </label>
+</div>
+
+            </div>
+            <div class="col">
+              
+<div class="symptom-item d-flex gap-2 align-items-center">
+  <input id="diarrhoea" type="checkbox" class="form-check-input" />
+  <label for="diarrhoea" class="d-flex justify-content-between align-items-center w-100 pointer">
+    Diarrhoea
+    <img src="./assets/img/ic-diarrhea.svg" class="ms-auto" alt="Sneezing" />
+  </label>
 </div>
 
             </div>
           </div>
         </div>
-        <div class="mb-3">
+        <div class="input__wrapper">
           <label for="">What do you feel?</label>
           <div class="row row-cols-5 g-2 mt-2">
             <div class="col">
@@ -985,17 +1005,17 @@
             </div>
           </div>
         </div>
-        <div class="mb-3">
+        <div class="input__wrapper">
           <p for="pulseRate" class="mb-0">
             Did your symptoms suddenly get worse?
           </p>
           <div class="mt-1">
-            <input type="radio" class="form-check-input" checked />
-            <label for="" class="form-label">Yes, Very bad</label>
+            <input id="isWorseTrue" type="radio" name="isWorse" class="form-check-input" checked />
+            <label for="isWorseTrue" class="form-label">Yes, Very bad</label>
           </div>
           <div class="mt-1">
-            <input type="radio" class="form-check-input" checked />
-            <label for="" class="form-label">No, still tolerable</label>
+            <input id="isWorseFalse"type="radio" name="isWorse" class="form-check-input" />
+            <label for="isWorseFalse" class="form-label">No, still tolerable</label>
           </div>
         </div>
       </div>
