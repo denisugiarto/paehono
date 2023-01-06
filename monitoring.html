@@ -293,13 +293,9 @@
         tabindex="0"
       >
         <section class="oximeter__section">
-          <a
-            href=""
-            class="link-primary fs-4 fw-semibold d-block mb-5"
-            role="link"
-          >
-            How to use a oximeter?
-          </a>
+          <h5 class="section__heading">
+            <a href="" class="link-primary">How to use a oximeter?</a>
+          </h5>
           <div class="card__primary">
             <div class="text-end">
               <button
@@ -391,9 +387,7 @@
             </div>
           </div>
           <div class="card__primary">
-            <div
-              class="chart__header"
-            >
+            <div class="chart__header">
               
 <div class="input__date">
   <input
@@ -519,11 +513,11 @@
         aria-labelledby="symptoms-tab"
         tabindex="0"
       >
-        <h6>
-          <a href="" class="link-primary fw-semibold"> Click Here </a>
+        <h5 class="section__heading">
+          <a href="" class="link-primary"> Click Here </a>
           to see references on using oximeter
-        </h6>
-        <div class="container bg-light-blue py-4">
+        </h5>
+        <div class="card__primary">
           <div class="mb-6">
             <div class="d-flex flex-wrap gap-3">
               
@@ -856,6 +850,7 @@
 
             </div>
             <div class="col">
+              
 <div class="symptom-item d-flex gap-2 align-items-center">
   <input id="fever" type="checkbox" class="form-check-input" />
   <label for="fever" class="d-flex justify-content-between align-items-center w-100 pointer">
@@ -863,8 +858,10 @@
     <img src="./assets/img/ic-fever.svg" class="ms-auto" alt="Sneezing" />
   </label>
 </div>
-</div>
+
+            </div>
             <div class="col">
+              
 <div class="symptom-item d-flex gap-2 align-items-center">
   <input id="cough" type="checkbox" class="form-check-input" />
   <label for="cough" class="d-flex justify-content-between align-items-center w-100 pointer">
@@ -872,7 +869,8 @@
     <img src="./assets/img/ic-cough.svg" class="ms-auto" alt="Sneezing" />
   </label>
 </div>
-</div>
+
+            </div>
             <div class="col">
               
 <div class="symptom-item d-flex gap-2 align-items-center">
@@ -929,14 +927,10 @@
                 name="myFeel"
                 id="feelCool"
                 autocomplete="off"
-                checked
               />
-              <label
-                class="btn btn-outline-primary border-0 text-dark w-100"
-                for="feelCool"
-              >
+              <label class="feel-item__input" for="feelCool">
                 <img src="./assets/img/ic-cool.svg" alt="" />
-                <span class="d-block">Cool</span>
+                <span class="text">Cool</span>
               </label>
             </div>
             <div class="col">
@@ -947,12 +941,9 @@
                 id="feelGood"
                 autocomplete="off"
               />
-              <label
-                class="btn btn-outline-primary border-0 text-dark"
-                for="feelGood"
-              >
+              <label class="feel-item__input" for="feelGood">
                 <img src="./assets/img/ic-good.svg" alt="" />
-                Good
+                <span class="text">Good</span>
               </label>
             </div>
             <div class="col">
@@ -963,12 +954,9 @@
                 id="feelNormal"
                 autocomplete="off"
               />
-              <label
-                class="btn btn-outline-primary border-0 text-dark"
-                for="feelNormal"
-              >
+              <label class="feel-item__input" for="feelNormal">
                 <img src="./assets/img/ic-normal.svg" alt="" />
-                Normal
+                <span class="text">Normal</span>
               </label>
             </div>
             <div class="col">
@@ -979,12 +967,9 @@
                 id="feelBad"
                 autocomplete="off"
               />
-              <label
-                class="btn btn-outline-primary border-0 text-dark"
-                for="feelBad"
-              >
+              <label class="feel-item__input" for="feelBad">
                 <img src="./assets/img/ic-bad.svg" alt="" />
-                Bad
+                <span class="text">Bad</span>
               </label>
             </div>
             <div class="col">
@@ -995,12 +980,9 @@
                 id="feelVeryBad"
                 autocomplete="off"
               />
-              <label
-                class="btn btn-outline-primary border-0 text-dark"
-                for="feelVeryBad"
-              >
+              <label class="feel-item__input" for="feelVeryBad">
                 <img src="./assets/img/ic-very-bad.svg" alt="" />
-                Very Bad
+                <span class="text">Very Bad</span>
               </label>
             </div>
           </div>
@@ -1009,13 +991,26 @@
           <p for="pulseRate" class="mb-0">
             Did your symptoms suddenly get worse?
           </p>
-          <div class="mt-1">
-            <input id="isWorseTrue" type="radio" name="isWorse" class="form-check-input" checked />
+          <div class="input-check__wrapper">
+            <input
+              id="isWorseTrue"
+              type="radio"
+              name="isWorse"
+              class="form-check-input"
+              checked
+            />
             <label for="isWorseTrue" class="form-label">Yes, Very bad</label>
           </div>
-          <div class="mt-1">
-            <input id="isWorseFalse"type="radio" name="isWorse" class="form-check-input" />
-            <label for="isWorseFalse" class="form-label">No, still tolerable</label>
+          <div class="input-check__wrapper">
+            <input
+              id="isWorseFalse"
+              type="radio"
+              name="isWorse"
+              class="form-check-input"
+            />
+            <label for="isWorseFalse" class="form-label"
+              >No, still tolerable</label
+            >
           </div>
         </div>
       </div>
