@@ -295,7 +295,73 @@ const feelingToday = [
 ];
 
 function createFeelingChart() {
-  createChart(ctxFeelingChart, labelsToday, feelingToday);
+  // createChart(ctxFeelingChart, labelsToday, feelingToday);
+  new Chart(ctxFeelingChart, {
+    type: "line",
+    data: {
+      xLabels: ["January", "February", "March", "April", "May", "June", "July"],
+      yLabels: [
+        "Request Added",
+        "Request Viewed",
+        "Request Accepted",
+        "Request Solved",
+        "Solving Confirmed",
+      ],
+      datasets: [
+        {
+          label: "My First dataset",
+          data: ["Request Added", "Request Viewed", "Request Added"],
+          fill: false,
+          showLine: false,
+          borderColor: "#f00",
+          backgroundColor: "#f00",
+        },
+        {
+          label: "My First dataset",
+          data: [null, "Request Accepted", "Request Accepted"],
+          fill: false,
+          showLine: false,
+          borderColor: "#f00",
+          backgroundColor: "#f00",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: "Chart.js - Non Numeric X and Y Axis",
+      },
+      legend: {
+        display: false,
+      },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Month",
+            },
+          },
+        ],
+        yAxes: [
+          {
+            type: "category",
+            position: "left",
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Request State",
+            },
+            ticks: {
+              reverse: true,
+            },
+          },
+        ],
+      },
+    },
+  });
 }
 
 if (ctxFeelingChart != null) {
