@@ -1,9 +1,10 @@
 {% set cssStyle = "style" %} {% set pageTitle = 'Medicine Kit' %} {% import
-'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+'nav.html' as nav %} {% import 'nearest-pharmacy.html' as pharmacy %} {% extends
+"layout.html" %} {% block content %}
 <header>{{ nav.pages() }}</header>
 <main>
   <section class="hero__section">
-    <img src="./assets/img/bg-home.webp" class="hero__bg" />
+    <img src="./assets/img/bg-shop.webp" class="hero__bg hero__bg--small" />
     <div class="hero__container">
       <div class="hero__content hero__content--big">
         <div class="hero__content-header hero__content-header--medicine-kit">
@@ -16,7 +17,9 @@
       </div>
     </div>
   </section>
-  <div class="content-with-ads__section d-flex col-12 col-xl-11 flex-wrap-reverse">
+  <section
+    class="content-with-ads__section d-flex col-12 col-xl-11 flex-wrap-reverse"
+  >
     <section class="ads__section col-12 col-xl-3 mb-6">
       <div class="container">
         <h5 class="text-center mb-4">Advertising</h5>
@@ -50,46 +53,9 @@
         </div>
       </div>
     </section>
-    
-  </div>
-  <section class="nearest-pharmacy__section bg-light-blue mb-0">
-    <div class="pharmacy__container">
-      <div class="pharmacy__title text-center">Nearest Pharmacy</div>
-      {% include 'pharmacy-list.html' %}
-      <!-- pagination -->
-      <nav class="pharmacy__pagination" aria-label="pharmacy pagination">
-        <ul class="pagination mt-5 justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
-              <i class="fas fa-ellipsis-h"></i>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">10</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
   </section>
+  {{ pharmacy.isChemist('Nearest Pharmacy', false)}} 
+  {% include 'nearest-pharmacy.html' %}
 </main>
 
 {% include 'footer.html' %} {% endblock %}

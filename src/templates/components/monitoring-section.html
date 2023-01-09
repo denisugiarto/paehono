@@ -51,52 +51,48 @@
         tabindex="0"
       >
         <section class="oximeter__section">
-          <a
-            href=""
-            class="link-primary fs-4 fw-semibold d-block mb-5"
-            role="link"
-          >
-            How to use a oximeter?
-          </a>
-          <div class="container bg-light-blue py-4 mb-5">
-            <div class="mb-6">
-              <div class="d-flex flex-wrap gap-3">
-                {{ input.date('oximeter-date') }}
-                <button
-                  class="btn btn-primary col-12 col-md-auto px-4"
-                  data-bs-target="#oximeterReadingModal"
-                  data-bs-toggle="modal"
-                >
-                  Take Reading
-                </button>
+          <h5 class="section__heading">
+            <a href="" class="link-primary">How to use a oximeter?</a>
+          </h5>
+          <div class="card__primary">
+            <div class="text-end">
+              <button
+                class="btn btn-primary col-12 col-md-auto px-4"
+                data-bs-target="#oximeterReadingModal"
+                data-bs-toggle="modal"
+              >
+                Take Reading
+              </button>
+            </div>
+            <hr class="opacity-100 text-light-gray" />
+            <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
+              <div class="col">
+                {{ card.monitoring('Morning', '99', '120') }}
               </div>
-              <hr class="opacity-100 text-light-gray" />
-              <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
-                <div class="col">
-                  {{ card.monitoring('Morning', '99', '120') }}
-                </div>
-                <div class="col">
-                  {{ card.monitoring('Afternoon', '-', '-') }}
-                </div>
-                <div class="col">{{ card.monitoring('Night', '-', '-') }}</div>
+              <div class="col">
+                {{ card.monitoring('Afternoon', '-', '-') }}
+              </div>
+              <div class="col">{{ card.monitoring('Night', '-', '-') }}</div>
+            </div>
+          </div>
+          <div class="card__primary">
+            <div class="chart__header">
+              {{ input.dateRange('oximeter-date') }}
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                  onchange="changeChartMaramataka(checked)"
+                />
+                <label class="form-check-label" for="flexSwitchCheckChecked">
+                  Maramataka Calender
+                </label>
               </div>
             </div>
             <div class="Chart__SP02 mb-5">
-              <div class="d-flex justify-content-between">
-                <h5>Sp02 Chart</h5>
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckChecked"
-                    onchange="changeChartMaramataka(checked)"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckChecked">
-                    Maramataka Calender
-                  </label>
-                </div>
-              </div>
+              <h5 class="chart__title">Sp02 Chart</h5>
               <hr />
               <div class="chart-wrapper">
                 <canvas id="oximeter-chart" class="bg-white"></canvas>
@@ -117,7 +113,7 @@
               </div>
             </div>
             <div class="Chart__Pulse-Rate">
-              <h5>Pulse Rate Chart</h5>
+              <h5 class="chart__title">Pulse Rate Chart</h5>
               <hr />
               <div class="chart-wrapper">
                 <canvas id="pulse-rate-chart" class="bg-white"></canvas>
@@ -193,11 +189,12 @@
         aria-labelledby="symptoms-tab"
         tabindex="0"
       >
-        <h6>
-          <a href="" class="link-primary fw-semibold"> Click Here </a>
+        <h5 class="section__heading">
+          <a href="" class="link-primary">Click Here</a>
           to see references on using oximeter
-        </h6>
-        <div class="container bg-light-blue py-4">
+        </h5>
+        <!-- Card symptom and button Add Symptom -->
+        <div class="card__primary">
           <div class="mb-6">
             <div class="d-flex flex-wrap gap-3">
               {{ input.date('date-symptom') }}
@@ -212,11 +209,11 @@
             <hr class="opacity-100 text-light-gray" />
             <div class="row row-cols-1 row-cols-xl-3 g-3 gx-xl-5">
               <div class="col">
-                <div class="card-symtomp">
+                <div class="card__symtomp">
                   <div class="card__header">
                     <h5 class="card__title">Morning</h5>
                     <a
-                      href="#updateOximeterReadingModal"
+                      href="#updateSymptomsModal"
                       role="button"
                       data-bs-toggle="modal"
                     >
@@ -224,21 +221,21 @@
                     </a>
                   </div>
                   <div class="card__content">
-                    <p class="content__heading">Actions</p>
-                    <p class="content__text fw-semibold">You are doing well</p>
-                    <p class="content__heading">Acceptable</p>
-                    <div class="content__items">
-                      <p class="text-success">Normal condition, no symptoms</p>
+                    <div class="actions__wrapper">
+                      <h6 class="content__heading">Actions</h6>
+                      <p class="content__action-item">You are doing well</p>
                     </div>
+                    <p class="content__heading">Acceptable</p>
+                    <p class="content__text">Normal condition, no symptoms</p>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card-symtomp">
+                <div class="card__symtomp">
                   <div class="card__header">
                     <h5 class="card__title">Afternoon</h5>
                     <a
-                      href="#updateOximeterReadingModal"
+                      href="#updateSymptomsModal"
                       role="button"
                       data-bs-toggle="modal"
                     >
@@ -246,24 +243,26 @@
                     </a>
                   </div>
                   <div class="card__content">
-                    <p class="content__heading">Actions</p>
-                    <p class="content__text fw-semibold">
-                      Contact your health provider for further examination
-                    </p>
+                    <div class="actions__wrapper">
+                      <h6 class="content__heading">Actions</h6>
+                      <p class="content__action-item">
+                        Contact your health provider for further examination
+                      </p>
+                    </div>
                     <p class="content__heading">Symptoms are not bad</p>
-                    <div class="content__items d-flex gap-3">
-                      <div class="btn btn-outline-danger">Bluish Colouring</div>
-                      <div class="btn btn-outline-danger">Tightness</div>
+                    <div class="content__symptom-list">
+                      <div class="symptom__item">Bluish Colouring</div>
+                      <div class="symptom__item">Tightness</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card-symtomp">
+                <div class="card__symtomp">
                   <div class="card__header">
                     <h5 class="card__title">Night</h5>
                     <a
-                      href="#updateOximeterReadingModal"
+                      href="#updateSymptomsModal"
                       role="button"
                       data-bs-toggle="modal"
                     >
@@ -271,22 +270,34 @@
                     </a>
                   </div>
                   <div class="card__content">
-                    <p class="content__heading">Actions</p>
-                    <ul class="content__text fw-semibold">
-                      <li>Call 111 for an ambulance</li>
-                      <li>
-                        Contact your health provider for further examination
-                      </li>
-                    </ul>
+                    <div class="actions__wrapper">
+                      <p class="content__heading">Actions</p>
+                      <ul>
+                        <li class="content__action-item">
+                          Call 111 for an ambulance
+                        </li>
+                        <li class="content__action-item">
+                          Contact your health provider for further examination
+                        </li>
+                      </ul>
+                    </div>
                     <p class="content__heading">Symptoms are bad</p>
-                    <div class="content__items d-flex gap-3">
-                      <div class="btn btn-outline-danger">Bluish Colouring</div>
-                      <div class="btn btn-outline-danger">Tightness</div>
+                    <div class="content__symptom-list">
+                      <div class="symptom__item">Bluish Colouring</div>
+                      <div class="symptom__item">Tightness</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- Feeling Chart -->
+        <div class="card__primary">
+          <h5 class="chart__title">Feeling Chart</h5>
+          <hr />
+          <div class="chart-wrapper pb-0">
+            <canvas id="feeling-chart" class="bg-white"></canvas>            
           </div>
         </div>
       </div>

@@ -1,0 +1,13 @@
+{% macro isChemist(title, list) %}
+<section class="nearest-pharmacy__section bg-light-blue">
+  <div class="pharmacy__container">
+    <div class="pharmacy__title text-center">{{title}}</div>
+    {% if list %}
+      {% include 'chemist-list.html' %}
+    {% else %}
+      {% include 'pharmacy-list.html' %}
+    {% endif %}
+    {% include 'pagination.html' %}
+  </div>
+</section>
+{% endmacro %}

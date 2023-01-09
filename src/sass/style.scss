@@ -7,28 +7,21 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // 3. Layout-related sections
-// @import "layout/header", "layout/footer", "layout/form", "layout/webapp";
 
 // 4. Components
 @import "components/accordion", "components/ads", "components/alert",
-  "components/card-profile", "components/card-monitoring","components/card-symtomp", "components/chart",
+  "components/card", "components/card-monitoring", "components/card-symtomp",
+  "components/categories", "components/chart", "components/feel-item",
   "components/footer", "components/form", "components/form-control",
-  "components/form-label", "components/form-check-input", "components/hero",
-  "components/hospital", "components/icon", "components/input",
-  "components/medicine-item", "components/navbar", "components/navbar-brand",
-  "components/nav-tabs", "components/pharmacy", "components/select-2",
-  "components/section", "components/table-lung", "components/tab-pane";
-// , "components/badge", "components/bg-heading",
-//   "components/button", "components/card", "components/carousel",
-//   "components/changes", "components/chart", "components/datepicker",
-//   "components/dropdown", "components/flash", "components/fontello",
-
-//    "components/form-step.scss", "components/header-navigation",
-//   "components/high-low", "components/icon", "components/image-preview",
-//   "components/input", "components/modal", "components/nav",
-//   "components/notification", "components/navbar", "components/progress-bar",
-//   "components/select2", "components/sidenav", "components/swiper",
-//   "components/toggle-hide-show", "components/tooltip";
+  "components/form-label", "components/hero", "components/hospital",
+  "components/icon", "components/input", "components/medicine-item",
+  "components/navbar", "components/navbar-brand", "components/nav-tabs",
+  "components/pharmacy", "components/select-2", "components/section",
+  "components/shop.scss", "components/table-lung", "components/tab-pane";
 
 // 5. Page-specific styles
 @import "pages/auth", "pages/medicine-kit";
+
+.pointer {
+  cursor: pointer;
+}

@@ -3,11 +3,20 @@
     width: 100%;
     height: 280px;
     object-fit: cover;
+    object-position: top;
     @include media-breakpoint-up(md) {
       height: 360px;
     }
     @include media-breakpoint-up(lg) {
       height: 60vh;
+    }
+    &--small {
+      height: 272px;
+      &.fix-image-position {
+        @include media-breakpoint-up(lg) {
+          object-position: 0 -220px;
+        }
+      }
     }
   }
 
@@ -51,7 +60,8 @@
     }
   }
 
-  &__section + section, &__section + div   {
+  &__section + section,
+  &__section + div {
     margin-top: -48px;
   }
 }

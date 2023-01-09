@@ -18,4 +18,21 @@
       color: $gray-500;
     }
   }
+  &__wrapper:not(:last-child) {
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed $gray-400;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 20px;
+    }
+  }
+  &-check__wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 10px;
+    .form-label {
+      margin-bottom: 0;
+    }
+  }
 }

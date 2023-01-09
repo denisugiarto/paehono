@@ -97,7 +97,6 @@ function createSpaceLabels(labels) {
 
 function createSpaceDatas(datas) {
   const newDatas = [Object.assign({}, ...datas)];
-  console.log("newDatas", newDatas);
   newDatas[0].data = [null, ...newDatas[0].data, null];
   return newDatas;
 }
@@ -147,23 +146,24 @@ function updateChartArea(chartArea, length) {
     return (data.data = newArr);
   });
 }
-console.log("src", oxigenRateToday);
 const createChart = (id, labels, datas, chartArea) => {
   const SPACE_LENGTH = 2;
   const DATAS_LENGTH = datas[0].data.length;
   let chartAreaLength = SPACE_LENGTH + DATAS_LENGTH;
-
-  updateChartArea(chartArea, chartAreaLength);
   const datasWithSpace = createSpaceDatas(datas);
   const labelsWithSpace = createSpaceLabels(labels);
-  console.log(datasWithSpace);
 
-  let datasets = [...datasWithSpace, ...chartArea];
+  let datasets = [...datasWithSpace];
+  if (chartArea != null) {
+    updateChartArea(chartArea, chartAreaLength);
+    datasets = [...datasets, ...chartArea];
+  }
 
   const data = {
     labels: labelsWithSpace,
     datasets,
   };
+
   const chartConfig = {
     type: "line",
     data,
@@ -279,6 +279,93 @@ function changeChartMaramataka(checked) {
 
   createOximeterChartMaramataka();
   createPulseRateChartMaramataka();
+}
+
+//Feeling Chart
+const ctxFeelingChart = document.getElementById("feeling-chart");
+const feelingToday = [
+  {
+    label: "Oxigen Rate ",
+    data: [5, 4, 3],
+    borderWidth: 2,
+    backgroundColor: "rgb(15, 25, 40)",
+    borderColor: "rgb(15, 25, 40)",
+    fill: false,
+  },
+];
+
+function createFeelingChart() {
+  // createChart(ctxFeelingChart, labelsToday, feelingToday);
+  new Chart(ctxFeelingChart, {
+    type: "line",
+    data: {
+      xLabels: ["January", "February", "March", "April", "May", "June", "July"],
+      yLabels: [
+        "Request Added",
+        "Request Viewed",
+        "Request Accepted",
+        "Request Solved",
+        "Solving Confirmed",
+      ],
+      datasets: [
+        {
+          label: "My First dataset",
+          data: ["Request Added", "Request Viewed", "Request Added"],
+          fill: false,
+          showLine: false,
+          borderColor: "#f00",
+          backgroundColor: "#f00",
+        },
+        {
+          label: "My First dataset",
+          data: [null, "Request Accepted", "Request Accepted"],
+          fill: false,
+          showLine: false,
+          borderColor: "#f00",
+          backgroundColor: "#f00",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: "Chart.js - Non Numeric X and Y Axis",
+      },
+      legend: {
+        display: false,
+      },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Month",
+            },
+          },
+        ],
+        yAxes: [
+          {
+            type: "category",
+            position: "left",
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Request State",
+            },
+            ticks: {
+              reverse: true,
+            },
+          },
+        ],
+      },
+    },
+  });
+}
+
+if (ctxFeelingChart != null) {
+  createFeelingChart();
 }
 
 //LitePicker Config
