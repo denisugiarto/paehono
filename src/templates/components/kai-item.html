@@ -1,0 +1,10 @@
+{% macro default(imgUrl, name, type, duration) %}
+<div class="food__item">
+  <img src="./assets/img/{{imgUrl}}" class="food__image" alt="{{imgUrl}}" />
+  <div class="food__content">
+    <p class="food__type">{{type}}</p>
+    <p class="food__name">{{name}}</p>
+    <p class="food__duration"><i class="fas fa-clock text-dark"></i> {{duration}}</p>
+  </div>
+</div>
+{% endmacro %}

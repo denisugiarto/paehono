@@ -1,0 +1,29 @@
+.food {
+    &__item{
+        padding: 20px;
+        background-color: $gray-200;
+        border-radius: 10px;
+    }
+    &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin: 40px 0;
+        border-radius: 10px;
+    }
+    &__content {
+        border-top: 1px solid $gray-400;
+        padding-top: 20px;
+    }
+    &__name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        margin: 10px 0;
+    }
+    &__duration, &__type {
+        color: $gray-600;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

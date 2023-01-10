@@ -1,6 +1,7 @@
 <!-- pagination -->
+{% macro default(class) %}
 <nav class="pharmacy__pagination" aria-label="pharmacy pagination">
-  <ul class="pagination mt-5 justify-content-center">
+  <ul class="pagination {{class}}">
     <li class="page-item">
       <a class="page-link" href="#">
         <i class="fas fa-chevron-left"></i>
@@ -30,3 +31,4 @@
     </li>
   </ul>
 </nav>
+{% endmacro %}

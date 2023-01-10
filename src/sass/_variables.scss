@@ -108,11 +108,18 @@ $form-feedback-icon-valid: "";
 $form-feedback-valid-color: $primary;
 $form-feedback-icon-invalid: "";
 
+//Heading 
+$headings-margin-bottom: 0;
+
 //Input
 $input-btn-focus-color: $info;
 $input-btn-focus-width: 0.125rem;
 $input-padding-y-lg: 1rem;
 $input-padding-x-lg: 1rem;
+
+//Input Group Add on
+$input-group-addon-color: $gray-500;
+$input-group-addon-bg: $white;
 
 //Link
 $link-color: $gray-900;
@@ -127,7 +134,6 @@ $nav-link-padding-y: 0.625rem;
 $nav-link-padding-x: 0rem;
 $nav-link-color: $gray-900;
 $nav-tabs-link-active-color: $primary;
-
 $nav-tabs-border-width: 4px;
 
 //Navbar Brands
@@ -138,6 +144,9 @@ $navbar-light-brand-hover-color: rgba($primary, 0.8);
 
 // Pagination
 $pagination-color: $primary;
+
+//Paragraph
+$paragraph-margin-bottom: 0;
 
 // sizing
 $base-font-size: 16px;

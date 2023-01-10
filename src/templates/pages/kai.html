@@ -1,0 +1,22 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Kai' %} {% import 'nav.html' as
+nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.pages() }}</header>
+<main>
+  <section class="hero__section">
+    <img src="./assets/img/bg-kai.webp" class="hero__bg hero__bg--small" />
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__content-header hero__content-header--medicine-kit">
+          Kai
+        </h1>
+        <hr class="text-primary opacity-100 mx-6" />
+        <p class="hero__content-body hero__content-body--medicine-kit">
+          Each recipe includes a detailed list of ingredients and step-by-step
+          instructions.
+        </p>
+      </div>
+    </div>
+  </section>
+  {% include 'kai-section.html' %}
+</main>
+{% include 'footer.html' %} {% endblock %}

@@ -1,0 +1,76 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Rongoa māori' %} {% import
+'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.pages() }}</header>
+<main>
+  <section class="hero__section">
+    <img
+      src="./assets/img/bg-rongoa maori.webp"
+      class="hero__bg hero__bg--small"
+    />
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__content-header hero__content-header--medicine-kit">
+          Rongoa māori
+        </h1>
+        <hr class="text-primary opacity-100 mx-6" />
+        <p class="hero__content-body hero__content-body--medicine-kit">
+          Medical native plants of New Zealeand
+        </p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="col col-md-5 col-lg-4">
+        <div class="input-group">
+          <input
+            type="search"
+            id="form1"
+            class="form-control"
+            placeholder="Search"
+          />
+          <label class="input-group-text" for="form1">
+            <i class="fas fa-search"></i>
+          </label>
+        </div>
+      </div>
+      <h2 class="table__heading">
+        Northland <span class="table__subheading">Show-4 data</span>
+      </h2>
+      <div class="table-responsive mt-3 mb-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Location</th>
+              <th scope="col">Contact Details</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <td>DyVine RongoāMark</td>
+              <td>Whangārei</td>
+              <td class="text-info">029 650 1348</td>
+            </tr>
+            <tr>
+              <td>Keeley Hetherington</td>
+              <td>Whangārei / Mangawhai</td>
+              <td class="text-info">021 165 2629</td>
+            </tr>
+            <tr>
+              <td>Lybina Rapatini</td>
+              <td>Kaikohe</td>
+              <td class="text-info">021 071 2707</td>
+            </tr>
+            <tr>
+              <td>Miri with Ellen</td>
+              <td>Kaikohe</td>
+              <td class="text-info">miriwithellen@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+{% include 'footer.html' %} {% endblock %}

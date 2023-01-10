@@ -1,0 +1,51 @@
+{% import 'pagination.html' as pagination %}
+<section id="kai">
+  <div class="container">
+    <div class="d-flex gap-3 flex-wrap flex-md-nowrap col col-md-10 col-lg-5">
+      <div class="input-group">
+        <input
+          type="search"
+          id="form1"
+          class="form-control"
+          placeholder="Search"
+        />
+        <label class="input-group-text" for="form1">
+          <i class="fas fa-search"></i>
+        </label>
+      </div>
+      <select class="form-select">
+        <option>All recipes</option>
+        <option>Desert</option>
+      </select>
+    </div>
+    <div class="shop__body row gx-6 mt-5">
+      <div class="col">
+        {% include 'kai-list.html' %}
+        <div
+          class="row justify-content-space-between align-items-center mt-5"
+        >
+          <p class="col col-lg">Showing 1 of 7 pages</p>
+          <div class="col col-lg-auto">{{pagination.default()}}</div>
+        </div>
+      </div>
+      <div class="col-auto">
+        <h5 class="text-center mb-4">Advertising</h5>
+        <div class="card bg-light-blue border-0">
+          <div class="card-header bg-light-blue text-end border-0">
+            <a role="button" class="btn" aria-label="Close">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
+          <div class="card-body text-center bg-light rounded-3 mx-3 mb-4 1mt-0">
+            <img class="ads__image" src="./assets/img/img-ads.webp" alt="" />
+            <p class="my-3">
+              DELIVERED TO NEW <br />
+              ZEALAND'S BEST
+            </p>
+            <button class="btn btn-primary px-4">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Te tikanga o toku whare' %} {%
+import 'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.pages() }}</header>
+<main>
+  <section class="hero__section">
+    <img
+      src="./assets/img/bg-tetikangao.webp"
+      class="hero__bg hero__bg--small"
+    />
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__content-header hero__content-header--medicine-kit">
+          Te tikanga o toku whare
+        </h1>
+        <hr class="text-primary opacity-100 mx-6" />
+      </div>
+    </div>
+  </section>
+  <section id="content" class="mb-6">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <h5>What is Lorem Ipsum?</h5>
+          <p class="mt-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p class="mt-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img src="./assets/img/img-room.webp" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row mt-6 gy-3">
+        <div class="col-md-6">
+          <img src="./assets/img/img-room.webp" alt="" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <h5>What is Lorem Ipsum?</h5>
+          <p class="mt-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p class="mt-3">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% include 'footer.html' %} {% endblock %}
