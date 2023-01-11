@@ -18,17 +18,17 @@
         <option>Desert</option>
       </select>
     </div>
-    <div class="shop__body row gx-6 mt-5">
+    <div class="shop__body row gx-4 mt-5">
       <div class="col">
         {% include 'kai-list.html' %}
         <div
-          class="row justify-content-space-between align-items-center mt-5"
+          class="row row-cols-1 row-cols-lg-2 justify-content-lg-between align-items-center mt-5 gy-3 gy-lg-0"
         >
-          <p class="col col-lg">Showing 1 of 7 pages</p>
-          <div class="col col-lg-auto">{{pagination.default()}}</div>
+          <p class="col col-lg text-center text-lg-start">Showing 1 of 7 pages</p>
+          <div class="col col-lg-auto w-auto mx-auto ms-lg-auto me-lg-0">{{pagination.default()}}</div>
         </div>
       </div>
-      <div class="col-auto">
+      <div class="col-auto mx-auto my-5">
         <h5 class="text-center mb-4">Advertising</h5>
         <div class="card bg-light-blue border-0">
           <div class="card-header bg-light-blue text-end border-0">

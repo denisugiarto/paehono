@@ -1,0 +1,8 @@
+.kai {
+  &--bg {
+    object-position: 92%;
+    @include media-breakpoint-up(md) {
+      object-position: right;
+    }
+  }
+}

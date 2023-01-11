@@ -1,0 +1,15 @@
+.kai-detail {
+  &__bg {
+    object-position: center;
+  }
+}
+
+.line-divider {
+    border-right: 1px solid $primary;
+    height: 32px;
+    margin: 0 10px 0 8px;
+    @include media-breakpoint-up(md) {
+      margin: 0 16px 0 8px;
+
+    }
+}

@@ -12,16 +12,17 @@
 @import "components/accordion", "components/ads", "components/alert",
   "components/card", "components/card-monitoring", "components/card-profile",
   "components/card-symtomp", "components/categories", "components/chart",
-  "components/feel-item", "components/food", "components/footer", "components/form",
-  "components/form-control", "components/form-label", "components/hero",
-  "components/hospital", "components/icon", "components/input",
-  "components/medicine-item", "components/navbar", "components/navbar-brand",
-  "components/nav-tabs", "components/pharmacy", "components/select-2",
-  "components/section", "components/shop.scss", "components/table",
-  "components/table-lung", "components/tab-pane";
+  "components/feel-item", "components/food", "components/footer",
+  "components/form", "components/form-control", "components/form-label",
+  "components/hero", "components/hospital", "components/icon",
+  "components/input", "components/medicine-item", "components/navbar",
+  "components/navbar-brand", "components/nav-tabs", "components/pharmacy",
+  "components/recipe", "components/select-2", "components/section",
+  "components/shop","components/share", "components/table", "components/table-lung",
+  "components/tab-pane";
 
 // 5. Page-specific styles
-@import "pages/auth", "pages/medicine-kit";
+@import "pages/auth", "pages/medicine-kit", "pages/kai", "pages/kai-detail";
 
 .pointer {
   cursor: pointer;

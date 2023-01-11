@@ -1,0 +1,24 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Kai Detail' %} {% import
+'nav.html' as nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.pages() }}</header>
+<main>
+  <section class="hero__section">
+    <img
+      src="./assets/img/img-chickens.webp"
+      class="hero__bg hero__bg--small kai-detail__bg"
+    />
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__content-header hero__content-header--medicine-kit">
+          Vegetable Spring Rolls
+        </h1>
+        <hr class="text-primary opacity-100 mx-6" />
+        <p class="hero__content-body hero__content-body--medicine-kit">
+          Side-dish<span class="line-divider"></span>30 mins<span class="line-divider"></span>2 Serving<span class="line-divider"></span>11 Ingredient
+        </p>
+      </div>
+    </div>
+  </section>
+  {% include 'kai-detail-section.html' %}
+</main>
+{% include 'footer.html' %} {% endblock %}
