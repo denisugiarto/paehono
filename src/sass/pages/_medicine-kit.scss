@@ -18,7 +18,7 @@
   }
 }
 
-.medicine-kit__title {
+.medicine-shop__title {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
@@ -33,21 +33,6 @@
   }
 }
 
-.medicine-kit__section {
-  @include media-breakpoint-up(xl) {
+.medicine-shop__section {
     margin-top: -24px;
-  }
 }
-
-// .content-with-ads__section {
-//   position: relative;
-//   .ads__section {
-//     position: unset;
-//     margin-top: -48px;
-//     @include media-breakpoint-up(xl) {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//     }
-//   }
-// }
