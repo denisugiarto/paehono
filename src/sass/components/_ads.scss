@@ -1,6 +1,10 @@
 .ads {
-    &__image {
-        height: 220px;
-        object-fit: contain;
-    }
+  &__image {
+    height: 220px;
+    object-fit: contain;
+  }
+}
+
+#advertising {
+  max-width: 210px;
 }
