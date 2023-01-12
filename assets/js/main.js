@@ -300,16 +300,25 @@ function createFeelingChart() {
   new Chart(ctxFeelingChart, {
     type: "line",
     data: {
-      labels: [null,"Morning", "Afternoon", "Night", null],
+      labels: [null, "Morning", "Afternoon", "Night", null],
       datasets: [
         {
-          label: "data",
+          label: "marker",
           data: [0, 1, 2, 3, 4, 5],
           fill: false,
-          showLine: false,
-          borderColor: "#f00",
-          backgroundColor: "#f00",
+          borderWidth: 0,
+          borderColor: "transparent",
+          backgroundColor: "transparent",
         },
+        {
+          label: "data",
+          data: [null, 4, 3, 5,  null],
+          fill: false,
+          borderWidth: 2,
+          borderColor: "#3F7A98",
+          backgroundColor: "#3F7A98",
+        },
+
       ],
       stepped: true,
     },
@@ -317,9 +326,47 @@ function createFeelingChart() {
       responsive: true,
       scales: {
         y: {
-
-        }
-      }
+          ticks: {
+            callback: function (value, index) {
+              console.log(this.getLabelForValue(index))
+              let emoticon;
+              switch (value) {
+                case 0:
+                  emoticon = null;
+                  break;
+                case 1:
+                  emoticon = "\ud83d\ude16";
+                  break;
+                case 2:
+                  emoticon = "\ud83d\ude1e";
+                  break;
+                case 3:
+                  emoticon = "\ud83d\ude10";
+                  break;
+                case 4:
+                  emoticon = "\ud83d\ude00";
+                  break;
+                case 5:
+                  emoticon = "\ud83d\ude0e";
+                  break;
+              }
+              
+              return value % 1 === 0 ? emoticon : '';
+            }
+          }
+        },
+      },
+      plugins: {
+        legend: {
+          position: "bottom",
+          display: false,
+        },
+        tooltip: {
+          backgroundColor: "rgba(255,255,255, 1)",
+          bodyColor: "#101B37",
+          titleColor: "#101B37",
+        },
+      },
     },
   });
 }
