@@ -163,7 +163,6 @@ const createChart = (id, labels, datas, chartArea) => {
     labels: labelsWithSpace,
     datasets,
   };
-  console.log(data);
 
   const chartConfig = {
     type: "line",
@@ -300,7 +299,7 @@ function createFeelingChart() {
   new Chart(ctxFeelingChart, {
     type: "line",
     data: {
-      labels: [null, "Morning", "Afternoon", "Night", null],
+      labels: ["", "Morning", "Afternoon", "Night", ""],
       datasets: [
         {
           label: "marker",
@@ -323,6 +322,13 @@ function createFeelingChart() {
       stepped: true,
     },
     options: {
+      layout: {
+        padding: {
+          top: 15,
+          left: 10,
+          bottom: 10,
+        },
+      },
       responsive: true,
       scales: {
         y: {
@@ -358,7 +364,6 @@ function createFeelingChart() {
       },
       plugins: {
         legend: {
-          position: "bottom",
           display: false,
         },
         tooltip: {
