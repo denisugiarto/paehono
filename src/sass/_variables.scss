@@ -74,7 +74,7 @@ $accordion-border-width: 0;
 $accordion-button-focus-box-shadow: none;
 
 //Alert
-$alert-border-radius:  0;
+$alert-border-radius: 0;
 
 //Badge
 $badge-border-radius: 0.25rem;
@@ -100,15 +100,36 @@ $container-padding-x: 2.5rem;
 $dropdown-border-width: 0;
 
 //Font Size
+$font-size-base: 1rem;
 $font-size-lg: 1rem;
 $font-weight-semibold: 500;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+$h7-font-size: $font-size-base * 0.875;
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: $h7-font-size,
+);
+// scss-docs-end font-sizes
 
 //Form validation
 $form-feedback-icon-valid: "";
 $form-feedback-valid-color: $primary;
 $form-feedback-icon-invalid: "";
 
-//Heading 
+//Heading
 $headings-margin-bottom: 0;
 
 //Input

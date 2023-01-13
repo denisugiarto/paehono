@@ -11,9 +11,7 @@
     <i class="fas fa-calendar-alt"></i>
   </label>
 </div>
-{% endmacro %}
-
-{% macro dateRange(id) %}
+{% endmacro %} {% macro dateRange(id) %}
 <div class="input__date">
   <input
     class="form-control date-litepicker-range"
@@ -26,9 +24,7 @@
     <i class="fas fa-calendar-alt"></i>
   </label>
 </div>
-{% endmacro %}
-
-{% macro dateFullWidth(id) %}
+{% endmacro %} {% macro dateFullWidth(id) %}
 <div class="input__date w-100">
   <input
     class="form-control date-litepicker"
@@ -40,5 +36,20 @@
   <label for="{{id}}">
     <i class="fas fa-calendar-alt"></i>
   </label>
+</div>
+{% endmacro %}
+
+<!-- FLOATING INPUT -->
+{% macro floating(label, name, value, type='text') %}
+<div class="form-floating">
+  <input
+    name="{{ name }}"
+    type="{{ type }}"
+    class="form-control"
+    id="{{ name }}"
+    placeholder="{{ label }}"
+    value="{{ value | escape }}"
+  />
+  <label for="{{ name }}">{{ label }}</label>
 </div>
 {% endmacro %}

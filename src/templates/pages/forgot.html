@@ -1,0 +1,30 @@
+{% set cssStyle = "style" %} {% set pageTitle = 'Forgot Password' %} {% import 'nav.html'
+as nav %} {% extends "layout.html" %} {% block content %}
+<header>{{ nav.auth() }}</header>
+<main>
+  <section class="auth__section">
+    <div class="auth__container">
+      <h1 class="auth__title">Recover Password</h1>
+      <form class="needs-validation" novalidate>
+        <div class="auth__form-field">
+          <label class="form-label">Email</label>
+          <div class="form__input">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="Enter Your Email here"
+              required
+            />
+            <a role="button" class="clear-input show"></a>
+          </div>
+          <div class="invalid-feedback">Your email invalid</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg col-12 mt-6">
+            Email me a recovery link
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

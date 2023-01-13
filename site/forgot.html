@@ -16,7 +16,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title></title>
+    <title>Forgot Password</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -51,8 +51,7 @@
         your experience.
       </p>
     <![endif]-->
-     
-
+    
 <header>
 <nav class="navbar sticky-top navbar-light bg-light">
   <div class="container">
@@ -60,30 +59,28 @@
   </div>
 </nav>
 </header>
-<main class="auth">
+<main>
   <section class="auth__section">
-    <div class="container">
-      <div class="auth__row row">
-        <div class="auth__content">
-          <div class="auth__content-wrapper">
-            <h2 class="auth__sub-title">Content :</h2>
-            <div class="auth__list row row-cols-md-3 g-3">
-              <a href="login.html" class="auth__link">Login</a>
-              <a href="sign_up.html" class="auth__link">Sign Up</a>
-              <a href="forgot.html" class="auth__link">Forgot Password</a>
-              <a href="edit-profile.html" class="auth__link">Edit Profile</a>
-              <a href="home.html" class="auth__link">Main System</a>
-              <a href="medicine-kit.html" class="auth__link">Medicine Kit</a>
-              <a href="monitoring.html" class="auth__link">Monitoring</a>
-              <a href="shop.html" class="auth__link">Shop</a>
-              <a href="rongoa-maori.html" class="auth__link">Rongoa māori</a>
-              <a href="tetikangao.html" class="auth__link">Te tikanga o toku whare</a>
-              <a href="kai.html" class="auth__link">Kai</a>
-              <a href="kai-detail.html" class="auth__link">Kai Detail</a>
-            </div>
+    <div class="auth__container">
+      <h1 class="auth__title">Recover Password</h1>
+      <form class="needs-validation" novalidate>
+        <div class="auth__form-field">
+          <label class="form-label">Email</label>
+          <div class="form__input">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              placeholder="Enter Your Email here"
+              required
+            />
+            <a role="button" class="clear-input show"></a>
           </div>
+          <div class="invalid-feedback">Your email invalid</div>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary btn-lg col-12 mt-6">
+            Email me a recovery link
+        </button>
+      </form>
     </div>
   </section>
 </main>
