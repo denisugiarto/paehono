@@ -283,98 +283,104 @@ function changeChartMaramataka(checked) {
 
 //Feeling Chart
 const ctxFeelingChart = document.getElementById("feeling-chart");
+const scalesFeelingChart = {
+  y: {
+    ticks: {
+      callback: function (value, index) {
+        let emoticon;
+        switch (value) {
+          case 0:
+            emoticon = null;
+            break;
+          case 1:
+            emoticon = "\ud83d\ude16";
+            break;
+          case 2:
+            emoticon = "\ud83d\ude1e";
+            break;
+          case 3:
+            emoticon = "\ud83d\ude10";
+            break;
+          case 4:
+            emoticon = "\ud83d\ude00";
+            break;
+          case 5:
+            emoticon = "\ud83d\ude0e";
+            break;
+        }
+
+        return value % 1 === 0 ? emoticon : "";
+      },
+    },
+  },
+};
+
 const feelingToday = [
   {
-    label: "Oxigen Rate ",
-    data: [5, 4, 3],
-    borderWidth: 2,
-    backgroundColor: "rgb(15, 25, 40)",
-    borderColor: "rgb(15, 25, 40)",
+    label: "Feeling",
+    data: [4, 3, 5],
     fill: false,
+    borderWidth: 2,
+    borderColor: "#3F7A98",
+    backgroundColor: "#3F7A98",
+  },
+];
+const feelingMaramataka = [
+  {
+    label: "Feeling",
+    data: [5, 4, 3, 1, 3, 5, 5],
+    fill: false,
+    borderWidth: 2,
+    borderColor: "#3F7A98",
+    backgroundColor: "#3F7A98",
+  },
+];
+const feelingChartArea = [
+  {
+    label: "marker",
+    data: [0, 1, 2, 3, 4, 5],
+    fill: false,
+    borderWidth: 0,
+    borderColor: "transparent",
+    backgroundColor: "transparent",
   },
 ];
 
-function createFeelingChart() {
-  // createChart(ctxFeelingChart, labelsToday, feelingToday);
-  new Chart(ctxFeelingChart, {
-    type: "line",
-    data: {
-      labels: ["", "Morning", "Afternoon", "Night", ""],
-      datasets: [
-        {
-          label: "marker",
-          data: [0, 1, 2, 3, 4, 5],
-          fill: false,
-          borderWidth: 0,
-          borderColor: "transparent",
-          backgroundColor: "transparent",
-        },
-        {
-          label: "data",
-          data: [null, 4, 3, 5,  null],
-          fill: false,
-          borderWidth: 2,
-          borderColor: "#3F7A98",
-          backgroundColor: "#3F7A98",
-        },
+let feelingChart;
 
-      ],
-    },
-    options: {
-      layout: {
-        padding: {
-          top: 15,
-          left: 10,
-          bottom: 10,
-        },
-      },
-      responsive: true,
-      scales: {
-        y: {
-          ticks: {
-            callback: function (value, index) {
-              console.log(this.getLabelForValue(index))
-              let emoticon;
-              switch (value) {
-                case 0:
-                  emoticon = null;
-                  break;
-                case 1:
-                  emoticon = "\ud83d\ude16";
-                  break;
-                case 2:
-                  emoticon = "\ud83d\ude1e";
-                  break;
-                case 3:
-                  emoticon = "\ud83d\ude10";
-                  break;
-                case 4:
-                  emoticon = "\ud83d\ude00";
-                  break;
-                case 5:
-                  emoticon = "\ud83d\ude0e";
-                  break;
-              }
-              
-              return value % 1 === 0 ? emoticon : '';
-            }
-          }
-        },
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          backgroundColor: "rgba(255,255,255, 1)",
-          bodyColor: "#101B37",
-          titleColor: "#101B37",
-        },
-      },
-    },
-  });
+function createFeelingChart() {
+  console.log((chartOptions.scales = scalesFeelingChart));
+  console.log(scalesFeelingChart);
+  console.log(chartOptions);
+  feelingChart = createChart(
+    ctxFeelingChart,
+    labelsToday,
+    feelingToday,
+    feelingChartArea
+  );
 }
 
+function createFeelingChartMaramataka() {
+  feelingChart = createChart(
+    ctxFeelingChart,
+    labelsMaramataka,
+    feelingMaramataka,
+    feelingChartArea
+  );
+}
+
+function changeFeelingMaramataka(checked) {
+  feelingChart.destroy();
+
+  if (!checked) {
+    createFeelingChart();
+    return;
+  }
+
+  createFeelingChartMaramataka();
+}
+
+// createChart(
 if (ctxFeelingChart != null) {
   createFeelingChart();
 }
